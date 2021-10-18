@@ -20,7 +20,7 @@ public class UtenteDao implements UtenteModel {
 		PreparedStatement preparedStatement = null;
 
 		String insertSQL = "INSERT INTO " + TABLE_NAME
-				+ " (matricola,nome,cognome,email,tipolaurea,dipartimento) VALUES (?, ?, ?, ?,?,?)";
+				+ " (matricola,nome,cognome,email,tipolaurea,dipartimento,cellulare) VALUES (?, ?, ?, ?,?,?,?)";
 
 		try {
 			connection = DriverManagerConnectionPool.getConnection();
@@ -31,6 +31,7 @@ public class UtenteDao implements UtenteModel {
 			preparedStatement.setString(4, utente.getEmail());
 			preparedStatement.setString(5, utente.getTipolaurea());
 			preparedStatement.setString(6, utente.getDipartimento());
+			preparedStatement.setString(7, utente.getCellulare());
 			preparedStatement.executeUpdate();
 
 			connection.commit();

@@ -30,6 +30,7 @@ public class Signup extends HttpServlet {
 		model.setEmail(request.getParameter("email"));
 		model.setTipolaurea(request.getParameter("tipolaurea"));
 		model.setDipartimento(request.getParameter("dipartimento"));
+		model.setCellulare(request.getParameter("cellulare"));
 
 		try {
 			dao.doSave(model);

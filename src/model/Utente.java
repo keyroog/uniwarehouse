@@ -6,9 +6,14 @@ public class Utente {
 	private String email;
 	private String tipolaurea;
 	private String dipartimento;
+	private String cellulare;
 	private int matricola;
 
 	public Utente() {}
+	
+	public void setCellulare(String tel) {
+		cellulare=tel;
+	}
 	
 	public void setNome(String name) {
 		nome=name;
@@ -56,5 +61,9 @@ public class Utente {
 	
 	public String getDipartimento() {
 		return dipartimento;
+	}
+	
+	public String getCellulare() {
+		return cellulare;
 	}
 }

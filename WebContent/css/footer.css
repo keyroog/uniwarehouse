@@ -1,0 +1,30 @@
+@charset "ISO-8859-1";
+
+.footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #061737;
+  color: white;
+  text-align: center;
+  display: flex;
+  font-family: sans-serif;
+}
+
+
+footer ul{
+	padding: 0px 50px 20px 10px;
+	margin-left: 10%;
+}
+
+.copy{
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 5px;
+}
+

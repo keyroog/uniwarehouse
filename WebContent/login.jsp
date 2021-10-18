@@ -4,9 +4,17 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Login - UniWarehouse</title>
+<link href="./css/login.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-
+		<%@include file="header.jsp" %>
+	<div class= form_container>
+		<form class=Accedi action=Login method="post">
+			<input type="text" placeholder="Email" name="email" required> <br>
+			<input type="password" placeholder="Password" name="password" required> <br>
+		</form>
+	</div>
+	<%@include file="footer.jsp" %>
 </body>
 </html>

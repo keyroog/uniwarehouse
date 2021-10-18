@@ -23,5 +23,6 @@
   			<button type="submit"> Cerca </button>
 		</form>
 	</div>
+	<%@include file="footer.jsp" %>
 </body>
 </html>

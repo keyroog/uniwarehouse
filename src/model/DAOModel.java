@@ -3,7 +3,7 @@ package model;
 import java.sql.SQLException;
 import java.util.Collection;
 
-public interface UtenteModel {
+public interface DAOModel {
 	public void doSave(Utente utente) throws SQLException;
 
 	public boolean doDelete(int code) throws SQLException;

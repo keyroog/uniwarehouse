@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.util.Collection;
 import java.util.LinkedList;
 
-public class UtenteDao implements UtenteModel {
+public class UtenteDao implements DAOModel {
 
 	private static final String TABLE_NAME = "utente";
 

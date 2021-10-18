@@ -1,0 +1,92 @@
+@charset "ISO-8859-1";
+
+header {
+  background-color:#061737;
+  padding: 20px;
+  font-size: 25px;
+  color: white;
+}
+
+header h1{
+	display:inline;
+	margin-left:20px;
+  position: relative;
+}
+
+header img{
+	margin:0;
+	padding:0;
+	height:5%;
+	width:5%;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+	margin-top:20px;
+  background-color: #061737;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 18px 8%;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #FFFFFF;
+  color: black;
+}
+
+div.boxsearch{
+	margin-top:30px;
+	margin-left:30%;
+	margin-right:30%;
+}
+
+/* Style the search field */
+form.searchbar input[type=text] {
+	border-radius:20px 0px 0px 20px;
+  padding: 10px;
+  font-size: 17px;
+  color:white;
+  border: 1px solid grey;
+  float: left;
+  width: 80%;
+  background: #061737;
+}
+
+form.searchbar button {
+	border-radius:0px 20px 20px 0px;
+  float: left;
+  width: 15%;
+  padding: 10px;
+  background: #0e3783;
+  color: white;
+  font-size: 17px;
+  border: 1px solid grey;
+  border-left: none;
+  cursor: pointer;
+}
+
+
+form.searchbar button:hover {
+  background: #0b7dda;
+}
+
+/* Clear floats */
+form.searchbar::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+body {
+	font-family : sans-serif;
+	background-color: #829bb0;
+}

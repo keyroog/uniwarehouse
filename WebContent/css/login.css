@@ -2,31 +2,63 @@
 
 .form_container{
 	font-style: Sans-Serif;
-	padding: 10% 40% 10% 40%;
+	padding: 10% 10% 10% 30%;
 }
 
 form input[type=text],[type=password],[type=email],[type=tel]{
-	width:70%;
-	padding:2px;
-	border-radius:10px;
-	margin-top:20px;
-  font-size: 17px;
-  color:white;
+  width: 70%; 
+  padding:2px;
+  border-radius:10px;
+  margin-top:20px;
+  font-size: 15px;
+  color:black;
   border: 1px solid grey;
   background: white;
+  align-content: center;
 }
 
 
 fieldset{
   border-radius:10px;
   color:white;
-  border: 1px solid grey;
+  border: 5px solid grey;
   background: #061737;
   font-style: Sans-Serif;
-  padding: 10% 10% 10% 10%;
   text-align: center;
+  width: 500px;
+  background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+  background-image: linear-gradient(to top, #FFFFFF 0%, #061737 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 legend{
 	font-size: 25px;
+	background-color: grey;
+	border-radius:10px;
+	color:white;
+}
+
+
+::placeholder{
+	text-align:left;
+	font-size: 15px;
+}
+
+
+form input[type=submit],[type=reset]{
+  background:#a4b7c6;
+  border: none;
+  color: white;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius:10px;
+}
+
+body{
+	background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+	background-image: linear-gradient(to top, #829bb0 0%, #061737 100%);
+	background-attachment: fixed;
+  background-repeat: no-repeat;
 }

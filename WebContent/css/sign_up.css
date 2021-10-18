@@ -5,7 +5,10 @@
 .searchbox{
 	display:block;
 	border-radius:20px 20px 20px 20px;
-	background-color: #061737;
+	background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+	background-image: linear-gradient(to top, #FFFFFF 0%, #061737 100%);
+	background-attachment: fixed;
+ 	background-repeat: no-repeat;
   	overflow: hidden;
   	margin-top:5%;
 	margin-right:20%;
@@ -61,7 +64,7 @@ form input[type=text],[type=password],[type=email],[type=tel]{
 
 
 form input[type=submit],[type=reset]{
-	background:#a4b7c6;
+  background:#a4b7c6;
   border: none;
   color: white;
   padding: 16px 32px;
@@ -92,4 +95,12 @@ a:hover, a:active {
 
 h1.login{
 	padding-top:30px;
+}
+
+
+body{
+	background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+	background-image: linear-gradient(to top, #829bb0 0%, #061737 100%);
+	background-attachment: fixed;
+  	background-repeat: no-repeat;
 }

@@ -13,8 +13,9 @@
 	<fieldset>
 	<legend>ACCEDI</legend>
 		<form class=Accedi action=Login method="post">
-			<input type="text" placeholder="Email" name="email" required> <br>
-			<input type="password" placeholder="Password" name="password" required> <br>
+			<label> Email: </label><input type="text" placeholder="info@example.com" name="email" required> <br>
+			<label> Password: </Label><input type="password" placeholder="******" name="password" required> <br>
+			<input type="submit" value="Login">
 		</form>
 	</fieldset>
 	</div>

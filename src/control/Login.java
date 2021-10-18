@@ -13,10 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/Login")
 public class Login extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+
     public Login() {
         super();
         // TODO Auto-generated constructor stub

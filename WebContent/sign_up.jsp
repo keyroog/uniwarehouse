@@ -3,24 +3,37 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="./script/formValidation.js"></script>
+<script>
+		var check = function() {
+		      if (document.getElementById("password").value ==
+		          document.getElementById("conferma_password").value) {
+		          document.getElementById("message").style.color = "green";
+		          document.getElementById("message").innerHTML = "Coincidono";
+		      } else {
+		      		document.getElementById("message").style.color = "red";
+		          document.getElementById("message").innerHTML = "Non Coincidono";
+		      }
+		  }
+		</script>
 <meta charset="ISO-8859-1">
 <title>Sign Up - UniWarehouse</title>
 <link href="./css/sign_up.css" rel="stylesheet" type="text/css">
 </head>
-<body>
+<body onload="document.registra.nome.focus();">
 	<%@include file="header.jsp" %>
 	<div class="searchbox">
 	<div class="form_container">
 		<h1>Registrati Per Proseguire</h1>
-			<form class="registra" action="Signup" method="post">
-				<input type="text"  placeholder="nome" name="nome"  required><br>
-				<input type="text" placeholder="cognome" name="cognome" required><br>
-				<input type="email" placeholder="e-mail" name="email" required> <br>
-				<input type="password" id="password" placeholder="password" name="password" onkeyup="check();" required><br>
-				<input type="password" id="conferma_password" placeholder="conferma password" name="conferma_password" onkeyup="check();" required><br>
+			<form class="registra" id="registra"  name="registra" action="Signup" method="post"  onsubmit="return validateForm();">
+				<input type="text"  placeholder="nome" name="nome" size="12"><br>
+				<input type="text" placeholder="cognome" name="cognome" ><br>
+				<input type="email" placeholder="e-mail" name="email" > <br>
+				<input type="password" id="password" placeholder="password" name="password" onkeyup="check();" ><br>
+				<input type="password" id="conferma_password" placeholder="conferma password" name="conferma_password" onkeyup="check();" ><br>
 				<div class="message" id="message"></div> <br>
-				<input type="text" placeholder="Matricola" name="matricola" class="matricola"required><br>
-				<input type="tel" placeholder="Cellulare" name="cellulare" required><br>
+				<input type="text" placeholder="Matricola" name="matricola" class="matricola"><br>
+				<input type="tel" placeholder="Cellulare" name="cellulare" ><br>
 				<fieldset>
 					<legend>Il Tuo Profilo</legend>
 						<label for="dipartimento">Seleziona Il Dipartimento:</label>
@@ -43,19 +56,7 @@
 				</h1>
 			</form>
 			</div>
-		<script>
-		var check = function() {
-		      if (document.getElementById("password").value ==
-		          document.getElementById("conferma_password").value) {
-		          document.getElementById("message").style.color = "green";
-		          document.getElementById("message").innerHTML = "Coincidono";
-		      } else {
-		      		document.getElementById("message").style.color = "red";
-		          document.getElementById("message").innerHTML = "Non Coincidono";
-		      }
-		  }
 		
-		</script>
 		<h1 class="login">Oppure <a href="" target="_blank">Accedi</a></h1>
 	</div>
 </body>

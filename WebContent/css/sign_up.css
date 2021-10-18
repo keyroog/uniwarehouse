@@ -1,51 +1,34 @@
 @charset "ISO-8859-1";
 
-body {
-	font-family : sans-serif;
-	background-color: #829bb0;
-}
 
-header {
-  background-color:#061737;
-  padding: 20px;
-  font-size: 25px;
-  color: white;
-}
-
-header h1{
-	display:inline;
-	margin-left:20px;
-  position: relative;
-}
-
-img.logo{
-	margin:0;
-	padding:0;
-	height:5%;
-	width:5%;
-}
 
 .searchbox{
+	display:block;
 	border-radius:20px 20px 20px 20px;
 	background-color: #061737;
   	overflow: hidden;
   	margin-top:5%;
 	margin-right:20%;
 	margin-left:20%;
+	margin-bottom:5%;
 }
 
 div h1{
+	text-align:center;
 	padding-top:20px;
-	padding-left:20px;
 	padding-bottom:0px;
 	color:white;
 }
 
+.form_container{
+	display:block;
+	align-content:center;
+}
+
 .registra{
-	display: flex;
-	flex-flow: row wrap;
+	width:100%;
+  display: table;
   align-items: center;
-  float: left;
   color: #f2f2f2;
   padding-top:10px;
   text-align: center;
@@ -54,25 +37,28 @@ div h1{
 }
 
 fieldset{
-	padding-top:20px;
-	margin-left:260px;
-	margin-bottom:40px;
+	margin:40px;
 }
 
-span{
-	margin-left:5px;
+::placeholder{
+	text-align:center;
 }
 
-form input[type=text],[type=password],[type=email]{
+.message{
+	margin-top:20px;
+}
+
+form input[type=text],[type=password],[type=email],[type=tel]{
+	width:70%;
 	padding:2px;
-	display:inline;
 	border-radius:10px;
-	margin-left:20px;
+	margin-top:20px;
   font-size: 17px;
   color:white;
   border: 1px solid grey;
   background: #061737;
 }
+
 
 form input[type=submit],[type=reset]{
 	background:#a4b7c6;
@@ -88,7 +74,6 @@ h1.invio{
 	
 	padding-top:0px;
 	margin-top:0px;
-	margin-left:280px;
 }
 
 a:link, a:visited {

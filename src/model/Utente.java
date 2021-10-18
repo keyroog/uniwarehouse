@@ -1,6 +1,6 @@
 package model;
 
-public class utente {
+public class Utente {
 	private String nome;
 	private String cognome;
 	private String email;
@@ -8,7 +8,7 @@ public class utente {
 	private String dipartimento;
 	private int matricola;
 
-	public utente() {}
+	public Utente() {}
 	
 	public void setNome(String name) {
 		nome=name;
@@ -33,5 +33,28 @@ public class utente {
 	public void setMatricola(int mat) {
 		matricola=mat;
 	}
+	
+	public int getMatricola() {
+		return matricola;
+	}
+	
+	public String getNome() {
+		return nome;
+	}
+	
+	public String getCognome() {
+		return cognome;
+	}
+	
+	public String getEmail() {
+		return email;
+	}
 
+	public String getTipolaurea() {
+		return tipolaurea;
+	}
+	
+	public String getDipartimento() {
+		return dipartimento;
+	}
 }

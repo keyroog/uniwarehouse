@@ -1,0 +1,30 @@
+@charset "ISO-8859-1";
+
+body{
+	margin:0;
+	font-family : sans-serif;
+	background-color: #829bb0;
+}
+
+header {
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+  background-color:#061737;
+  padding: 20px;
+  font-size: 25px;
+  color: white;
+}
+
+header h1{
+	display:inline;
+	margin-left:20px;
+  position: relative;
+}
+
+img.logo{
+	margin:0;
+	padding:0;
+	height:5%;
+	width:5%;
+}

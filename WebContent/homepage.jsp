@@ -8,10 +8,7 @@
 <link href="./css/homepage.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<header>
-		<img class="logo" src="./images/logo.png">
-			<h1>UniWarehouse</h1>
-	</header>
+	<%@include file="header.jsp" %>
 	<div class="topnav">
   		<a href="#home">Home</a>
   		<a href="#news">Vendi</a>

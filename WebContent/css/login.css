@@ -1,6 +1,32 @@
 @charset "ISO-8859-1";
 
 .form_container{
-	display:block;
-	align-content:center;
+	font-style: Sans-Serif;
+	padding: 10% 40% 10% 40%;
+}
+
+form input[type=text],[type=password],[type=email],[type=tel]{
+	width:70%;
+	padding:2px;
+	border-radius:10px;
+	margin-top:20px;
+  font-size: 17px;
+  color:white;
+  border: 1px solid grey;
+  background: white;
+}
+
+
+fieldset{
+  border-radius:10px;
+  color:white;
+  border: 1px solid grey;
+  background: #061737;
+  font-style: Sans-Serif;
+  padding: 10% 10% 10% 10%;
+  text-align: center;
+}
+
+legend{
+	font-size: 25px;
 }

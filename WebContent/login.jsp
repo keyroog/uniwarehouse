@@ -10,10 +10,13 @@
 <body>
 		<%@include file="header.jsp" %>
 	<div class= form_container>
+	<fieldset>
+	<legend>ACCEDI</legend>
 		<form class=Accedi action=Login method="post">
 			<input type="text" placeholder="Email" name="email" required> <br>
 			<input type="password" placeholder="Password" name="password" required> <br>
 		</form>
+	</fieldset>
 	</div>
 	<%@include file="footer.jsp" %>
 </body>

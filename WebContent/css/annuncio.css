@@ -1,0 +1,72 @@
+@charset "ISO-8859-1";
+
+@charset "ISO-8859-1";
+
+.form_container{
+	font-style: Sans-Serif;
+	padding: 10% 10% 10% 30%;
+}
+
+form input[type=text],[type=password],[type=email],[type=tel]{
+  width: 70%; 
+  padding:5px;
+  border-radius:3px;
+  margin-top:40px;
+  font-size: 15px;
+  color:black;
+  border: 1px solid grey;
+  background: white;
+  align-content: center;
+}
+
+
+fieldset{
+  border-radius:10px;
+  color:white;
+  border: 2px solid black;
+  font-style: Sans-Serif;
+  text-align: center;
+  width: 500px;
+  background-image: linear-gradient(to top, #FFFFFF 25%, #061737 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+legend{
+	font-size: 25px;
+	font-weight: bold;
+	background-image: linear-gradient(to top, #FFFFFF 10%, #061737 100%);
+	border-radius:5px;
+	color: black;
+	border: 2px solid black;
+}
+
+
+::placeholder{
+	text-align:left;
+	font-size: 15px;
+}
+
+
+form input[type=submit],[type=reset]{
+  background:#a4b7c6;
+  border: 3px;
+  color: white;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 25px;
+  margin-top:40px;
+}
+
+form input[type=submit]:hover{
+	opacity: 0.5;;
+}
+
+body{
+	background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+	background-image: linear-gradient(to top, #829bb0 0%, #061737 100%);
+	background-attachment: fixed;
+  background-repeat: no-repeat;
+}

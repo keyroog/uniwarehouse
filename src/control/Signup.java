@@ -31,6 +31,7 @@ public class Signup extends HttpServlet {
 		model.setTipolaurea(request.getParameter("tipolaurea"));
 		model.setDipartimento(request.getParameter("dipartimento"));
 		model.setCellulare(request.getParameter("cellulare"));
+		model.setPass(request.getParameter("password"));
 		
 		try {
 			dao.doSave(model);

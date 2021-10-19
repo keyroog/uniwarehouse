@@ -31,7 +31,8 @@ fieldset{
 }
 
 legend{
-	font-size: 40px;
+	font-size: 25px;
+	font-weight: bold;
 	background-image: linear-gradient(to top, #FFFFFF 10%, #061737 100%);
 	border-radius:5px;
 	color: black;

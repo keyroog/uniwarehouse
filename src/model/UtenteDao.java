@@ -20,7 +20,7 @@ public class UtenteDao implements DAOModel {
 		PreparedStatement preparedStatement = null;
 
 		String insertSQL = "INSERT INTO " + TABLE_NAME
-				+ " (matricola,nome,cognome,email,tipolaurea,dipartimento,cellulare) VALUES (?, ?, ?, ?,?,?,?)";
+				+ " (matricola,nome,cognome,email,tipolaurea,dipartimento,cellulare,pass) VALUES (?, ?, ?, ?,?,?,?,?)";
 
 		try {
 			connection = DriverManagerConnectionPool.getConnection();
@@ -32,6 +32,7 @@ public class UtenteDao implements DAOModel {
 			preparedStatement.setString(5, utente.getTipolaurea());
 			preparedStatement.setString(6, utente.getDipartimento());
 			preparedStatement.setString(7, utente.getCellulare());
+			preparedStatement.setString(8, utente.getPass());
 			preparedStatement.executeUpdate();
 
 			connection.commit();
@@ -148,6 +149,34 @@ public class UtenteDao implements DAOModel {
 			}
 		}
 		return products;
+	}
+	
+	
+	public synchronized Boolean checkLoginDB(String email, String password, int code) throws SQLException {
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+		String selectSQL = "SELECT email,pass FROM " + TABLE_NAME + " WHERE email = ? AND pass = ?";
+		try {
+			connection = DriverManagerConnectionPool.getConnection();
+			preparedStatement = connection.prepareStatement(selectSQL);
+			preparedStatement.setString(1,email);
+			preparedStatement.setString(2, password);
+			
+			ResultSet rs = preparedStatement.executeQuery();
+			if(rs.isBeforeFirst()) {
+				return true;
+			}
+			else
+				return false;
+
+		} finally {
+			try {
+				if (preparedStatement != null)
+					preparedStatement.close();
+			} finally {
+				DriverManagerConnectionPool.releaseConnection(connection);
+			}
+		}
 	}
 
 }

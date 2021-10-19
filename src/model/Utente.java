@@ -7,6 +7,7 @@ public class Utente {
 	private String tipolaurea;
 	private String dipartimento;
 	private String cellulare;
+	private String pass;
 	private int matricola;
 
 	public Utente() {}
@@ -39,6 +40,10 @@ public class Utente {
 		matricola=mat;
 	}
 	
+	public void setPass(String password) {
+		pass=password;
+	}
+	
 	public int getMatricola() {
 		return matricola;
 	}
@@ -65,5 +70,9 @@ public class Utente {
 	
 	public String getCellulare() {
 		return cellulare;
+	}
+	
+	public String getPass() {
+		return pass;
 	}
 }

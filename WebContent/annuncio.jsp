@@ -15,9 +15,9 @@
 		<form class=Annuncio action=Annuncio method="post">
 			<input type="text" placeholder="nome libro" name="libro" required> <br>
 			<input type="date" placeholder="dd/mm/yyyy" name="data" required> <br>
-			<textarea name="descrizione" rows="10" cols="50"></textarea> <br>
+			<textarea name="descrizione" placeholder="Scrivi una breve descrizione del libro..." rows="10" cols="50"></textarea> <br>
 			<input type="text" placeholder="inserisci url file" name="link"> <br>
-			<input type="submit" value="Login">
+			<input type="submit" value="Pubblica">
 		</form>
 	</fieldset>
 	</div>

@@ -15,7 +15,8 @@
 		<form class=Accedi action=Login method="post">
 			<input type="text" placeholder="email" name="email" required> <br>
 			<input type="password" placeholder="password" name="password" required> <br>
-			<input type="submit" value="Login">
+			<input type="submit" value="Login"><br>
+			<input type="button" value="Crea un Account">
 		</form>
 	</fieldset>
 	</div>

@@ -1,11 +1,12 @@
 @charset "ISO-8859-1";
 
+
 .form_container{
 	font-style: Sans-Serif;
 	padding: 10% 10% 10% 30%;
 }
 
-form input[type=text],[type=password],[type=email],[type=tel]{
+form input[type=text],[type=password],[type=email],[type=tel], [type=date]{
   width: 70%; 
   padding:5px;
   border-radius:3px;
@@ -19,24 +20,27 @@ form input[type=text],[type=password],[type=email],[type=tel]{
 
 
 fieldset{
-  border-radius:10px;
+  border-radius:30px;
   color:white;
-  border: 2px solid black;
+  border: 15px solid #E5BE01;
   font-style: Sans-Serif;
   text-align: center;
   width: 500px;
-  background-image: linear-gradient(to top, #FFFFFF 25%, #061737 100%);
+  background-image: linear-gradient(to top, #FFFFFF 100%, #061737 100%);
   background-attachment: fixed;
   background-repeat: no-repeat;
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
 }
 
 legend{
 	font-size: 25px;
 	font-weight: bold;
-	background-image: linear-gradient(to top, #FFFFFF 10%, #061737 100%);
-	border-radius:5px;
-	color: black;
-	border: 2px solid black;
+	background-color: #ff4461;
+	border-radius:20px;
+	color: white;
+	border: 15px solid #ff4461;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	
 }
 
 
@@ -46,8 +50,8 @@ legend{
 }
 
 
-form input[type=submit],[type=reset]{
-  background:#a4b7c6;
+form input[type=submit],[type=reset],[type=button]{
+  background:#ff4461;
   border: 3px;
   color: white;
   text-decoration: none;
@@ -62,9 +66,16 @@ form input[type=submit]:hover{
 	opacity: 0.5;;
 }
 
-body{
-	background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
-	background-image: linear-gradient(to top, #829bb0 0%, #061737 100%);
-	background-attachment: fixed;
-  background-repeat: no-repeat;
+form input[type=button]:hover{
+	opacity: 0.5;;
 }
+
+
+
+textarea{
+	margin-top:40px;
+	border-radius: 3px;
+}
+
+
+

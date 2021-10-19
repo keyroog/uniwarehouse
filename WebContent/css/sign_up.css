@@ -4,9 +4,10 @@
 
 .searchbox{
 	display:block;
-	border-radius:20px 20px 20px 20px;
+	border-radius: 30px;
+	border: 15px solid #E5BE01;
 	background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
-	background-image: linear-gradient(to top, #FFFFFF 0%, #061737 100%);
+	background-image: linear-gradient(to top, #FFFFFF 100%, #061737 100%);
 	background-attachment: fixed;
  	background-repeat: no-repeat;
   	overflow: hidden;
@@ -14,13 +15,17 @@
 	margin-right:20%;
 	margin-left:20%;
 	margin-bottom:5%;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+	font-style: sans-serif;
 }
+
+
 
 div h1{
 	text-align:center;
 	padding-top:20px;
 	padding-bottom:0px;
-	color:white;
+	color:black;
 }
 
 .form_container{
@@ -41,6 +46,10 @@ div h1{
 
 fieldset{
 	margin:40px;
+	color: black;
+	border-radius: 30px;
+	border: 8px solid #E5BE01;
+	
 }
 
 ::placeholder{
@@ -64,13 +73,15 @@ form input[type=text],[type=password],[type=email],[type=tel]{
 
 
 form input[type=submit],[type=reset]{
-  background:#a4b7c6;
-  border: none;
+  background:#ff4461;
+  border: 3px;
   color: white;
-  padding: 16px 32px;
   text-decoration: none;
   margin: 4px 2px;
   cursor: pointer;
+  border-radius: 3px;
+  font-size: 25px;
+  margin-top:40px;
 }
 
 h1.invio{
@@ -80,27 +91,22 @@ h1.invio{
 }
 
 a:link, a:visited {
-  background-color: #829bb0;
+  background-color: #ff9900;
   color: white;
   padding: 14px 25px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
+  border-radius: 10px;
 }
 
 a:hover, a:active {
-  background-color: #a4b7c6;
+  background-color: #ff4461;
 }
 
 
 h1.login{
 	padding-top:30px;
+
 }
 
-
-body{
-	background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
-	background-image: linear-gradient(to top, #829bb0 0%, #061737 100%);
-	background-attachment: fixed;
-  	background-repeat: no-repeat;
-}

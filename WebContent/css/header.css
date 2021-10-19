@@ -10,21 +10,22 @@ header {
 	margin-top:0px;
 	margin-left:0px;
 	margin-right:0px;
-  background-color:#061737;
-  padding: 20px;
-  font-size: 25px;
-  color: white;
+  	background-color: #E5BE01;
+	padding: 20px;
+  	font-size: 20px;
+  	color: black;
 }
 
 header h1{
-	display:inline;
-	margin-left:20px;
+  display:inline;
+  margin-left:20px;
   position: relative;
+
 }
 
 img.logo{
 	margin:0;
 	padding:0;
-	height:5%;
-	width:5%;
+	height:2%;
+	width:2%;
 }

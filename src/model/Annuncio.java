@@ -53,8 +53,8 @@ public class Annuncio {
 		return linkimage;
 	}
 	
-	public LocalDate getDate() {
-		return datainserimento;
+	public String getDate() {
+		return datainserimento.toString();
 	}
 	
 	public int getMatricola() {

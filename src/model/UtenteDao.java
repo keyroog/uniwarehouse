@@ -152,7 +152,7 @@ public class UtenteDao implements DAOModel {
 	}
 	
 	
-	public synchronized Boolean checkLoginDB(String email, String password, int code) throws SQLException {
+	public synchronized Utente checkLoginDB(String email, String password, int code) throws SQLException {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;
 		String selectSQL = "SELECT email,pass FROM " + TABLE_NAME + " WHERE email = ? AND pass = ?";
@@ -162,12 +162,29 @@ public class UtenteDao implements DAOModel {
 			preparedStatement.setString(1,email);
 			preparedStatement.setString(2, password);
 			
+			
+			
 			ResultSet rs = preparedStatement.executeQuery();
+			
+			Utente bean = new Utente();
+			
+			while (rs.next()) {
+
+
+				bean.setMatricola(rs.getInt("matricola"));
+				bean.setNome(rs.getString("nome"));
+				bean.setCognome(rs.getString("cognome"));
+				bean.setEmail(rs.getString("email"));
+				bean.setTipolaurea(rs.getString("tipolaurea"));
+				bean.setDipartimento(rs.getString("dipartimento"));
+			}
+			
+			
 			if(rs.isBeforeFirst()) {
-				return true;
+				return bean;
 			}
 			else
-				return false;
+				return null;
 
 		} finally {
 			try {

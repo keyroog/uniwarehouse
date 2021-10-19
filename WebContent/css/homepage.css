@@ -22,7 +22,7 @@ header img{
 
 /* Add a black background color to the top navigation */
 .topnav {
-	margin-top:20px;
+  margin-top:20px;
   background-color: #061737;
   overflow: hidden;
 }

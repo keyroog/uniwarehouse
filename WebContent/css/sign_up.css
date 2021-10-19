@@ -54,12 +54,12 @@ fieldset{
 form input[type=text],[type=password],[type=email],[type=tel]{
 	width:70%;
 	padding:2px;
-	border-radius:10px;
+	border-radius:3px;
 	margin-top:20px;
   font-size: 17px;
-  color:white;
+  color: black;
   border: 1px solid grey;
-  background: #061737;
+  background: white;
 }
 
 

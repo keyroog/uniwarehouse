@@ -22,15 +22,15 @@ header img{
 
 /* Add a black background color to the top navigation */
 .topnav {
-  margin-top:20px;
-  background-color: #061737;
+  margin-top:0px;
+  background-color: #ff4461;
   overflow: hidden;
 }
 
 /* Style the links inside the navigation bar */
 .topnav a {
   float: left;
-  color: #f2f2f2;
+  color: white;
   text-align: center;
   padding: 18px 8%;
   text-decoration: none;
@@ -39,8 +39,9 @@ header img{
 
 /* Change the color of links on hover */
 .topnav a:hover {
-  background-color: #FFFFFF;
-  color: black;
+  background-color: #ff9900;
+  color: white;
+  opacity: 0.7;
 }
 
 div.boxsearch{
@@ -54,11 +55,11 @@ form.searchbar input[type=text] {
 	border-radius:20px 0px 0px 20px;
   padding: 10px;
   font-size: 17px;
-  color:white;
+  color:black;
   border: 1px solid grey;
   float: left;
   width: 80%;
-  background: #061737;
+  background: white;
 }
 
 form.searchbar button {
@@ -66,7 +67,7 @@ form.searchbar button {
   float: left;
   width: 15%;
   padding: 10px;
-  background: #0e3783;
+  background: #ff4461;
   color: white;
   font-size: 17px;
   border: 1px solid grey;
@@ -76,7 +77,7 @@ form.searchbar button {
 
 
 form.searchbar button:hover {
-  background: #0b7dda;
+  background: #ff9900;
 }
 
 /* Clear floats */

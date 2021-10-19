@@ -72,5 +72,6 @@ form input[type=submit]:hover{
 textarea{
 	margin-top:40px;
 	border-radius: 3px;
+	font-style: sans-serif;
 }
 

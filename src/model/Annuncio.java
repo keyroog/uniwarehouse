@@ -1,13 +1,14 @@
 package model;
 
-import java.sql.Date;
+
+import java.time.LocalDate;
 
 public class Annuncio {
 	
 	
 	private static int idannuncio=0;
 	private String nomelibro;
-	private Date datainserimento;
+	private LocalDate datainserimento;
 	private String descrizione;
 	private int matricola;
 	private String linkimage;
@@ -20,8 +21,8 @@ public class Annuncio {
 		nomelibro=libro;
 	}
 	
-	public void setDate(Date now) {
-		datainserimento= (Date) now.clone();
+	public void setDate() {
+		datainserimento = LocalDate.now();
 	}
 	
 	public void setDescrizione(String desc) {
@@ -52,7 +53,7 @@ public class Annuncio {
 		return linkimage;
 	}
 	
-	public Date getDate() {
+	public LocalDate getDate() {
 		return datainserimento;
 	}
 	

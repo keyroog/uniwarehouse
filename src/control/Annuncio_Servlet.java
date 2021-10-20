@@ -1,15 +1,16 @@
 package control;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import model.AnnuncioDAO;
 import model.Utente;
@@ -34,12 +35,14 @@ public class Annuncio_Servlet extends HttpServlet {
 			throws ServletException, IOException {
 		AnnuncioDAO dao = new AnnuncioDAO();
 		Annuncio model = new Annuncio();
-		HttpSession ssn = request.getSession();
-		Utente user = (Utente) ssn.getAttribute("user");
-		model.setMatricola(user);
+		ServletContext ctx = request.getServletContext();
+		Utente user = (Utente) ctx.getAttribute("user");
+		PrintWriter out = response.getWriter();
+		out.println(user);
+		model.setMatricola(05121);
 		model.setDate();
 		model.setDescrizione(request.getParameter("descrizione"));
-		model.setNomeLibro(request.getParameter("nomelibro"));
+		model.setNomeLibro(request.getParameter("libro"));
 		model.setImage(request.getParameter("link"));
 		
 		try {

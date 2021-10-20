@@ -1,5 +1,5 @@
 package model;
-
+ciao antonio
 
 import java.time.LocalDate;
 
@@ -29,8 +29,8 @@ public class Annuncio {
 		descrizione = desc;
 	}
 	
-	public void setMatricola(Utente u) {
-		matricola=u.getMatricola();
+	public void setMatricola(int i) {
+		matricola=i;
 	}
 	
 	public void setImage(String link) {

@@ -20,7 +20,7 @@ public class AnnuncioDAO {
 		PreparedStatement preparedStatement = null;
 
 		String insertSQL = "INSERT INTO " + TABLE_NAME
-				+ " (idannuncio,nomelibro,datainserimento,descrizione,matricola,linkimage) VALUES (?, ?, ?, ?, ?, ?)";
+				+ " (idannuncio,nomelibro,datainserimento,descrizione,matricola,image) VALUES (?, ?, ?, ?, ?, ?)";
 
 		try {
 			connection = DriverManagerConnectionPool.getConnection();

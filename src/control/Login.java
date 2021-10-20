@@ -2,14 +2,15 @@ package control;
 
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
 
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import model.Utente;
 import model.UtenteDao;
@@ -27,16 +28,14 @@ public class Login extends HttpServlet {
 			try {
 				Utente session_user;
 				session_user= checkLogin(username, password);
-				request.getSession().setAttribute("adminRoles", true);
-				HttpSession ssn = request.getSession();
+				ServletContext ctx = request.getServletContext();
+				ctx.setAttribute("user", session_user);
+
+				
 				/*deve ritornarmi il bean cosi lo metto nella sessione facendo sss.SetAttribute("user", Bean che torna) 
 				 * a questo punto in Annuncio_Servlet
 				 * quando devo andare a configurare la matricola prendo l'user dalla sessione e faccio il getMatricola
 				 */
-				
-				ssn.setAttribute("user", session_user);
-				
-				
 				redirectedPage = "/homepage.jsp";
 			} catch (Exception e) {
 				request.getSession().setAttribute("adminRoles", false);
@@ -50,8 +49,9 @@ public class Login extends HttpServlet {
 	private Utente checkLogin(String email, String password) throws Exception {
 		UtenteDao dao= new UtenteDao();
 		try {
-			if(dao.checkLoginDB(email, password, 1) != null) {
-				return dao.checkLoginDB(email, password, 1);
+				Utente user = dao.checkLoginDB(email, password, 1);
+			if( user != null) {
+				return user;
 			}
 			else
 				throw new Exception("Invalid login and password");

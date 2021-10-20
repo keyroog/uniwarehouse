@@ -4,7 +4,6 @@ package control;
 import java.io.IOException;
 import java.sql.SQLException;
 
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -39,7 +38,7 @@ public class Login extends HttpServlet {
 				redirectedPage = "/homepage.jsp";
 			} catch (Exception e) {
 				request.getSession().setAttribute("adminRoles", false);
-				redirectedPage = "/login-form.jsp";
+				redirectedPage = "/login.jsp";
 			}
 			response.sendRedirect(request.getContextPath() + redirectedPage);
 		}

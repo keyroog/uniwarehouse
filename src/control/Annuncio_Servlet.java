@@ -11,6 +11,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import model.AnnuncioDAO;
 import model.Utente;
@@ -35,11 +36,9 @@ public class Annuncio_Servlet extends HttpServlet {
 			throws ServletException, IOException {
 		AnnuncioDAO dao = new AnnuncioDAO();
 		Annuncio model = new Annuncio();
-		ServletContext ctx = request.getServletContext();
+		HttpSession ctx = request.getSession();
 		Utente user = (Utente) ctx.getAttribute("user");
-		PrintWriter out = response.getWriter();
-		out.println(user);
-		model.setMatricola(05121);
+		model.setFkannuncio(user.getMatricola());
 		model.setDate();
 		model.setDescrizione(request.getParameter("descrizione"));
 		model.setNomeLibro(request.getParameter("libro"));

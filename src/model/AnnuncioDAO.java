@@ -20,7 +20,7 @@ public class AnnuncioDAO {
 		PreparedStatement preparedStatement = null;
 
 		String insertSQL = "INSERT INTO " + TABLE_NAME
-				+ " (idannuncio,nomelibro,datainserimento,descrizione,matricola,image) VALUES (?, ?, ?, ?, ?, ?)";
+				+ " (idannuncio,nomelibro,datainserimento,descrizione,image,fk_annuncio) VALUES (?, ?, ?, ?, ?, ?)";
 
 		try {
 			connection = DriverManagerConnectionPool.getConnection();
@@ -29,8 +29,8 @@ public class AnnuncioDAO {
 			preparedStatement.setString(2, annuncio.getNomeLibro());
 			preparedStatement.setString(3, annuncio.getDate());
 			preparedStatement.setString(4, annuncio.getDescrizione());
-			preparedStatement.setInt(5, annuncio.getMatricola());
-			preparedStatement.setString(6, annuncio.getImage());
+			preparedStatement.setString(5, annuncio.getImage());
+			preparedStatement.setInt(6, annuncio.getFkannuncio());
 			preparedStatement.executeUpdate();
 
 			connection.commit();

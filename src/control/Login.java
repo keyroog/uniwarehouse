@@ -2,7 +2,6 @@ package control;
 
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.sql.SQLException;
 
 import javax.servlet.ServletContext;
@@ -11,6 +10,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import model.Utente;
 import model.UtenteDao;
@@ -26,9 +26,9 @@ public class Login extends HttpServlet {
 			
 			String redirectedPage;
 			try {
-				Utente session_user;
+				Utente session_user = new Utente();
 				session_user= checkLogin(username, password);
-				ServletContext ctx = request.getServletContext();
+				HttpSession ctx = request.getSession();
 				ctx.setAttribute("user", session_user);
 
 				

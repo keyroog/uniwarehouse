@@ -1,5 +1,4 @@
 package model;
-ciao antonio
 
 import java.time.LocalDate;
 
@@ -12,6 +11,7 @@ public class Annuncio {
 	private String descrizione;
 	private int matricola;
 	private String linkimage;
+	private int fkannuncio;
 	
 	public void setId() {
 		idannuncio=idannuncio+1;
@@ -37,6 +37,10 @@ public class Annuncio {
 		linkimage = link;
 	}
 	
+	public void setFkannuncio(int i) {
+		fkannuncio=i;
+	}
+	
 	public int getId() {
 		return idannuncio;
 	}
@@ -59,6 +63,10 @@ public class Annuncio {
 	
 	public int getMatricola() {
 		return matricola;
+	}
+	
+	public int getFkannuncio() {
+		return fkannuncio;
 	}
 	
 	

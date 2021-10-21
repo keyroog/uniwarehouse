@@ -31,7 +31,7 @@
 				<td><%=bean.getNomeLibro()%></td>
 				<td><%=bean.getDescrizione()%></td>
 				<td><%=bean.getDate()%></td>
-				<td><img src="./getPicture?id=1 " onerror="this.src='./imgs/nophoto.png'" style="width:100px"></td>
+				<td><img src="./getPicture?id=2 " onerror="this.src='./imgs/nophoto.png'" style="width:100px"></td>
 			</tr>
 	<% 		} 
 	 	} else { %>

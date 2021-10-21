@@ -76,11 +76,11 @@ public class AnnuncioDAO {
 
 			while (rs.next()) {
 				Annuncio bean = new Annuncio();
-				
+				System.out.print(rs.getInt(1));
 				bean.setDate(rs.getDate("datainserimento").toLocalDate());
 				bean.setDescrizione(rs.getString("descrizione"));
 				bean.setFkannuncio(rs.getInt("fk_annuncio"));
-				bean.setId(rs.getInt("idannuncio"));
+				bean.setId(rs.getInt(1));
 				bean.setNomeLibro(rs.getString("nomelibro"));
 				bean.setImage(rs.getBlob("image"));
 				products.add(bean);

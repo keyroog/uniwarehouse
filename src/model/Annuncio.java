@@ -6,7 +6,7 @@ import java.time.LocalDate;
 public class Annuncio {
 	
 	
-	private static int idannuncio=0;
+	private int idannuncio;
 	private String nomelibro;
 	private LocalDate datainserimento;
 	private String descrizione;
@@ -14,9 +14,6 @@ public class Annuncio {
 	private int fkannuncio;
 	private Blob image;
 	
-	public void setId() {
-		idannuncio=idannuncio+1;
-	}
 	
 	public void setId(int i) {
 		idannuncio=i;

@@ -35,7 +35,6 @@ public class AnnuncioDAO {
 			FileInputStream fis = new FileInputStream(file);
 			connection = DriverManagerConnectionPool.getConnection();
 			preparedStatement = connection.prepareStatement(insertSQL);
-			/*preparedStatement.setInt(1, annuncio.getId());*/
 			preparedStatement.setString(1, annuncio.getNomeLibro());
 			preparedStatement.setString(2, annuncio.getDate());
 			preparedStatement.setString(3, annuncio.getDescrizione());

@@ -27,7 +27,7 @@ public class AnnuncioDAO {
 		PreparedStatement preparedStatement = null;
 
 		String insertSQL = "INSERT INTO " + TABLE_NAME
-				+ " (idannuncio,nomelibro,datainserimento,descrizione,image,fk_annuncio) VALUES (?, ?, ?, ?, ?, ?)";
+				+ " (nomelibro,datainserimento,descrizione,image,fk_annuncio) VALUES ( ?, ?, ?, ?, ?)";
 		
 		File file = new File(photo);
 
@@ -35,12 +35,12 @@ public class AnnuncioDAO {
 			FileInputStream fis = new FileInputStream(file);
 			connection = DriverManagerConnectionPool.getConnection();
 			preparedStatement = connection.prepareStatement(insertSQL);
-			preparedStatement.setInt(1, annuncio.getId());
-			preparedStatement.setString(2, annuncio.getNomeLibro());
-			preparedStatement.setString(3, annuncio.getDate());
-			preparedStatement.setString(4, annuncio.getDescrizione());
-			preparedStatement.setBinaryStream(5, fis, fis.available());
-			preparedStatement.setInt(6, annuncio.getFkannuncio());
+			/*preparedStatement.setInt(1, annuncio.getId());*/
+			preparedStatement.setString(1, annuncio.getNomeLibro());
+			preparedStatement.setString(2, annuncio.getDate());
+			preparedStatement.setString(3, annuncio.getDescrizione());
+			preparedStatement.setBinaryStream(4, fis, fis.available());
+			preparedStatement.setInt(5, annuncio.getFkannuncio());
 			preparedStatement.executeUpdate();
 
 			connection.commit();

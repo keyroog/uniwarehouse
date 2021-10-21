@@ -12,7 +12,7 @@
 	<div class="topnav">
   		<a href="#home">Home</a>
   		<a href="http://localhost/UNIWAREHOUSE/annuncio.jsp">Vendi</a>
-  		<a href="http://localhost/UNIWAREHOUSE/Catalogo.jsp">Compra</a>
+  		<a href="http://localhost/UNIWAREHOUSE/Catalogo_Servlet.jsp">Compra</a>
   		<a href="#about">FAQ</a>
   		<a href="#about">Account</a>
 	</div>

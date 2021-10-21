@@ -20,12 +20,12 @@ public class PostDAO {
 
 		try {
 			connection = DriverManagerConnectionPool.getConnection();
-			String sql = "SELECT photo FROM lectures WHERE id = " + id;
+			String sql = "SELECT image FROM annuncio WHERE idannuncio = " + id;
 			stmt = connection.prepareStatement(sql);
 			rs = stmt.executeQuery();
 
 			if (rs.next()) {
-				bt = rs.getBytes("photo");
+				bt = rs.getBytes("image");
 			}
 
 		} catch (SQLException sqlException) {

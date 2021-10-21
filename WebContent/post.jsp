@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    
+ 
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,7 +12,7 @@
 		<%@include file="header.jsp" %>
 		
 		<div class="card">
-			1<img src="./getPicture?id=1" onerror="this.src='./imgs/nophoto.png'" style="width:100px">
+			<img src="./getPicture?id=1 " onerror="this.src='./imgs/nophoto.png'" style="width:100px">
 		
 		
 		</div>

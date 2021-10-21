@@ -12,10 +12,10 @@
 	<div class= form_container>
 	<fieldset>
 	<legend>PUBBLICA UN ANNUNCIO</legend>
-		<form class=Annuncio action=Annuncio_Servlet method="post">
+		<form class=Annuncio action=Annuncio_Servlet method="post" enctype="multipart/form-data">
 			<input type="text" placeholder="nomelibro" name="libro" required> <br>
 			<textarea name="descrizione" placeholder="Scrivi una breve descrizione del libro..." rows="10" cols="50"></textarea> <br>
-			<input type="text" placeholder="inserisci url foto" name="link"> <br>
+			<input class="file" type="file" name="talkPhoto" value="" maxlength="255">	<br>
 			<input type="submit" value="Pubblica">
 		</form>
 	</fieldset>

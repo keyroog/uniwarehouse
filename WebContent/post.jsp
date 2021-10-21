@@ -10,7 +10,7 @@
 		<%@include file="header.jsp" %>
 		
 		<div class="card">
-			
+			1<img src="./getPicture?id=1" onerror="this.src='./imgs/nophoto.png'" style="width:100px">
 		
 		
 		</div>

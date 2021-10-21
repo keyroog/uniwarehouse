@@ -10,7 +10,6 @@ public class Annuncio {
 	private LocalDate datainserimento;
 	private String descrizione;
 	private int matricola;
-	private String linkimage;
 	private int fkannuncio;
 	
 	public void setId() {
@@ -33,9 +32,6 @@ public class Annuncio {
 		matricola=i;
 	}
 	
-	public void setImage(String link) {
-		linkimage = link;
-	}
 	
 	public void setFkannuncio(int i) {
 		fkannuncio=i;
@@ -53,9 +49,6 @@ public class Annuncio {
 		return descrizione;
 	}
 	
-	public String getImage() {
-		return linkimage;
-	}
 	
 	public String getDate() {
 		return datainserimento.toString();

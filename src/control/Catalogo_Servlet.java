@@ -5,6 +5,7 @@ import java.io.PrintWriter;
 import java.sql.SQLException;
 import java.util.Collection;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -36,23 +37,25 @@ public class Catalogo_Servlet extends HttpServlet {
 		AnnuncioDAO model = new AnnuncioDAO();
 		Collection<Annuncio> catalog;
 		try {
-			catalog = model.doRetrieveAll("datainserimento");
+			catalog = (Collection<Annuncio>) model.doRetrieveAll("idannuncio");
 			if(catalog.isEmpty()) {
-				
 				PrintWriter out = response.getWriter();
 				response.setContentType("text/plain");
 				out.write("No");
 				out.close();
 			}
-		
-			else {
-				request.setAttribute("catalogo", catalog);
-			}
+			
+			
+			request.setAttribute("catalogo", catalog);
 				
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+
+		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/Catalogo.jsp");
+		dispatcher.forward(request, response);
 	}
 
 	/**
@@ -61,6 +64,7 @@ public class Catalogo_Servlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+		
 	}
 
 }

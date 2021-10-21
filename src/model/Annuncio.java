@@ -1,5 +1,6 @@
 package model;
 
+import java.sql.Blob;
 import java.time.LocalDate;
 
 public class Annuncio {
@@ -11,17 +12,29 @@ public class Annuncio {
 	private String descrizione;
 	private int matricola;
 	private int fkannuncio;
+	private Blob image;
 	
 	public void setId() {
 		idannuncio=idannuncio+1;
 	}
 	
+	public void setId(int i) {
+		idannuncio=i;
+	}
+	
+	public void setImage(Blob img) {
+		image = img;
+	}
 	public void setNomeLibro(String libro) {
 		nomelibro=libro;
 	}
 	
 	public void setDate() {
 		datainserimento = LocalDate.now();
+	}
+	
+	public void setDate(LocalDate d) {
+		datainserimento = d;
 	}
 	
 	public void setDescrizione(String desc) {

@@ -2,10 +2,12 @@
 
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  max-width: 300px;
   text-align: center;
   font-family: arial;
-
+  display:inline-block;
+  margin: 5%;
+  padding: 5%;
+  background-color:white;
 }
 
 .price {
@@ -29,5 +31,12 @@
   opacity: 0.7;
 }
 
+.container{
+	text-align:center;
+}
+
+p{
+	width:100%;
+}
 
 

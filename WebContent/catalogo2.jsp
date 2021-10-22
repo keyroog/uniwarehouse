@@ -14,7 +14,7 @@
 
 	<%@include file="header.jsp" %>
 	<%@include file="topnav.jsp" %>
-			<div class = "container">
+<div class = "container">
 		<%
 		if(products != null && products.size() > 0) {
 			
@@ -38,7 +38,7 @@
 			<p> No Products Avaliable</p>
 	<% } %>
 		
-				</div>
+</div>
 	 <%@include file="footer.jsp" %>
 </body>
 </html>

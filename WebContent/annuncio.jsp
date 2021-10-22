@@ -16,6 +16,7 @@
 			<input type="text" placeholder="nomelibro" name="libro" required> <br>
 			<textarea name="descrizione" placeholder="Scrivi una breve descrizione del libro..." rows="10" cols="50"></textarea> <br>
 			<input class="file" type="file" name="talkPhoto" value="" maxlength="255">	<br>
+			<input type="text" placeholder="Prezzo " name="prezzo" required> <br>
 			<input type="submit" value="Pubblica">
 		</form>
 	</fieldset>

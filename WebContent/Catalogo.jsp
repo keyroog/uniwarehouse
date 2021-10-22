@@ -11,45 +11,39 @@
 <link href="./css/catalogo.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+
 	<%@include file="header.jsp" %>
 	<%@include file="topnav.jsp" %>
-	<table class="catalog">
-	<tr>
-		<th>Codice</th>
-		<th>Nome</th>
-		<th>Descrizione</th>
-		<th>Data Inserimento</th>
-		<th>Immagine</th>
-		<th>Prezzo</th>
-		<th>Venditore<th>
-	</tr>
-	<tbody>
-	<%
+<div class = "container">
+		<%
 		if(products != null && products.size() > 0) {
 			
 			Iterator<?> it  = products.iterator();
 			while(it.hasNext()) {
 				Annuncio bean = (Annuncio) it.next();
 	%>
-			<tr>
-				<td><%=bean.getId()%></td>
-				<td><%=bean.getNomeLibro()%></td>
-				<td><%=bean.getDescrizione()%></td>
-				<td><%=bean.getDate()%></td>
-				<td><img src="./getPicture?id=<%=bean.getId() %> " onerror="this.src='./imgs/nophoto.png'" style="width:100px"></td>
-				<td><%=bean.getPrice() + "&euro;"%></td>
-				<td><%=bean.getNome() + " " + bean.getCognome()%></td>
-			</tr>
+
+				<div class="card">
+  					<img src="./getPicture?id=<%=bean.getId() %> " onerror="this.src='./imgs/nophoto.png'" style="width:100px">
+  					<h1><%=bean.getNomeLibro()%></h1>
+  					<p class="price"><%=bean.getPrice() + "&euro;"%></p>
+ 					<%String length=bean.getDescrizione();
+ 						if(length.length()>30){
+ 							length=length.substring(1,29);
+ 							length+="...";
+ 						}%>
+ 					<p><%=length%></p>
+ 					<p><%=bean.getDate()%></p>
+ 					<p><%=bean.getNome() + " " + bean.getCognome()%></p>
+  					<p><button>Add to Cart</button></p>
+				</div>
+
 	<% 		} 
 	 	} else { %>
-	<tr>
-		<td colspan="4">No product available</td>
-	</tr>	
+			<p> No Products Avaliable</p>
 	<% } %>
-	</tbody>
-</table>
-	
-	
+		
+</div>
 	 <%@include file="footer.jsp" %>
 </body>
 </html>

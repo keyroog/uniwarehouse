@@ -8,7 +8,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Catalogo - UniWarehouse</title>
-<link href="./css/catalogo2.css" rel="stylesheet" type="text/css">
+<link href="./css/catalogo.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
@@ -27,7 +27,12 @@
   					<img src="./getPicture?id=<%=bean.getId() %> " onerror="this.src='./imgs/nophoto.png'" style="width:100px">
   					<h1><%=bean.getNomeLibro()%></h1>
   					<p class="price"><%=bean.getPrice() + "&euro;"%></p>
- 					<p><%=bean.getDescrizione()%></p>
+ 					<%String length=bean.getDescrizione();
+ 						if(length.length()>30){
+ 							length=length.substring(1,29);
+ 							length+="...";
+ 						}%>
+ 					<p><%=length%></p>
  					<p><%=bean.getDate()%></p>
  					<p><%=bean.getNome() + " " + bean.getCognome()%></p>
   					<p><button>Add to Cart</button></p>

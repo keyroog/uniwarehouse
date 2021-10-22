@@ -54,7 +54,7 @@ public class Catalogo_Servlet extends HttpServlet {
 		}
 		
 
-		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/Catalogo.jsp");
+		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/catalogo2.jsp");
 		dispatcher.forward(request, response);
 	}
 

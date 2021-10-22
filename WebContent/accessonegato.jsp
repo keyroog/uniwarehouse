@@ -11,8 +11,9 @@
 <%
 	int errore = (int)request.getAttribute("errore-registrazione");
 	if(errore==1){
-%>	<a>Il nome non puo contenere numeri o caratteri speciali </a><%} %>
+%>	<h1>Il nome non puo contenere numeri o caratteri speciali </h1><%} %>
 
+	<a href="" class="button">RIPROVA</a>
 </fieldset>
 </div>
 

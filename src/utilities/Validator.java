@@ -13,9 +13,4 @@ public class Validator {
 		}
 		return nome;
 	}
-	
-	public static void main(String[] args) throws Exception{
-		System.out.print(checkNome(""));
-	}
-
 }

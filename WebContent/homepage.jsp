@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"
+    import="model.Utente"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,6 +11,14 @@
 <body>
 	<%@include file="header.jsp" %>
 	<%@include file="topnav.jsp" %>
+	
+	<div class="hi_user">
+		<%
+		Utente session_user = new Utente();
+		HttpSession ssn = request.getSession();
+		session_user = (Utente) ssn.getAttribute("user");
+			%> <fieldset> Hi <%=session_user.getNome() %> </fieldset>
+		</div>
 	
 	<div class="boxsearch">
 		<form class="searchbar" action="action_page.php">

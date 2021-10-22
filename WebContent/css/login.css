@@ -77,5 +77,20 @@ textarea{
 	border-radius: 3px;
 }
 
+a.bottone{
+	background-color: #ff4461;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin-top:15px;
+}
+
+a.bottone:hover{
+	opacity:0.5;
+}
 
 

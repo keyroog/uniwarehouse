@@ -56,7 +56,7 @@
 				</h1>
 			</form>
 			</div>
-		<h1 class="login">Oppure <a href="" target="_blank">Accedi</a></h1>
+		<h1 class="login">Oppure <a class="bottone" href="./login.jsp">Accedi</a></h1>
 	</div>
 	<%@include file="footer.jsp" %>
 </body>

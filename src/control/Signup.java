@@ -47,7 +47,7 @@ public class Signup extends HttpServlet {
 			request.setAttribute("errore-registrazione", error);
 			dispatcher.forward(request, response);
 			return;
-		}
+		} 
 		
 		try {
 			dao.doSave(model);

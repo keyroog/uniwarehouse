@@ -12,6 +12,7 @@
 </head>
 <body>
 	<%@include file="header.jsp" %>
+	<%@include file="topnav.jsp" %>
 	<table class="catalog">
 	<tr>
 		<th>Codice</th>

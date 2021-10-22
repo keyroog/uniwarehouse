@@ -10,6 +10,7 @@
 </head>
 <body>
 		<%@include file="header.jsp" %>
+		<%@include file="topnav.jsp" %>
 		
 		<div class="card">
 			<img src="./getPicture?id=1 " onerror="this.src='./imgs/nophoto.png'" style="width:100px">

@@ -9,6 +9,7 @@
 </head>
 <body>
 	<%@include file="header.jsp" %>
+	<%@include file="topnav.jsp" %>
 	<div class= form_container>
 	<fieldset>
 	<legend>PUBBLICA UN ANNUNCIO</legend>

@@ -1,0 +1,33 @@
+@charset "ISO-8859-1";
+
+.accessdenied{
+	font-style: Sans-Serif;
+	padding: 10% 10% 10% 30%;
+}
+
+fieldset{
+  border-radius:30px;
+  color:black;
+  border: 15px solid #E5BE01;
+  font-style: Sans-Serif;
+  text-align: center;
+  width: 500px;
+  background-image: linear-gradient(to top, #FFFFFF 100%, #061737 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+}
+
+legend{
+	font-size: 25px;
+	font-weight: bold;
+	background-color: #ff4461;
+	border-radius:20px;
+	color: white;
+	border: 15px solid #ff4461;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+}
+
+a{
+	margin:5%;
+}

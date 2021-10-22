@@ -35,8 +35,14 @@
 <%	if(errore==7){ %>
 	<h1>Il formato del numero cellulare non è corretto </h1>
 <%	} %>
-
+<%	if(errore<=7){ %>
 	<a href="./sign_up.jsp" class="button">RIPROVA</a>
+<%	} %>
+
+<%	if(errore==8){ %>
+	<h1>Invalid Username or password </h1>
+	<a href="./login.jsp" class="button">RIPROVA</a>
+<%	} %>
 </fieldset>
 </div>
 

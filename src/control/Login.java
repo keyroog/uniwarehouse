@@ -4,6 +4,7 @@ package control;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -20,27 +21,27 @@ public class Login extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		{
+			
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/accessonegato.jsp");
 			String username = request.getParameter("email");
 			String password = request.getParameter("password");
-			
-			String redirectedPage;
 			try {
 				Utente session_user = new Utente();
 				session_user= checkLogin(username, password);
 				HttpSession ctx = request.getSession();
 				ctx.setAttribute("user", session_user);
-
+				 dispatcher = getServletContext().getRequestDispatcher("/homepage.jsp");
 				
 				/*deve ritornarmi il bean cosi lo metto nella sessione facendo sss.SetAttribute("user", Bean che torna) 
 				 * a questo punto in Annuncio_Servlet
 				 * quando devo andare a configurare la matricola prendo l'user dalla sessione e faccio il getMatricola
 				 */
-				redirectedPage = "/homepage.jsp";
+				 dispatcher.forward(request, response);
 			} catch (Exception e) {
 				request.getSession().setAttribute("adminRoles", false);
-				redirectedPage = "/login.jsp";
+				request.setAttribute("errore-registrazione", 8);
+				dispatcher.forward(request, response);
 			}
-			response.sendRedirect(request.getContextPath() + redirectedPage);
 		}
 	}
 

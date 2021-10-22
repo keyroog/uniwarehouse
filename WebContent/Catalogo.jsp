@@ -35,7 +35,8 @@
  					<p><%=length%></p>
  					<p><%=bean.getDate()%></p>
  					<p><%=bean.getNome() + " " + bean.getCognome()%></p>
-  					<p><button>Add to Cart</button></p>
+  					<button>Contattami</button>
+  					<button>Aggiungi alla wishlist</button>
 				</div>
 
 	<% 		} 

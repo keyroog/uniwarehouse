@@ -75,9 +75,7 @@ public class Annuncio_Servlet extends HttpServlet {
 		model.setDate();
 		model.setDescrizione(request.getParameter("descrizione"));
 		model.setNomeLibro(request.getParameter("libro"));
-		model.setPrice(request.getParameter("prezzo"));
-		model.setNome(user.getNome());
-		model.setCognome(user.getCognome());
+		
 		
 	    String appPath = request.getServletContext().getRealPath("");
 	    String savePath = appPath + File.separator + SAVE_DIR;

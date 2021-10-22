@@ -27,7 +27,7 @@ public class AnnuncioDAO {
 		PreparedStatement preparedStatement = null;
 
 		String insertSQL = "INSERT INTO " + TABLE_NAME
-				+ " (nomelibro,datainserimento,descrizione,image,fk_annuncio, prezzo, nome, cognome) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?)";
+				+ " (nomelibro,datainserimento,descrizione,image,fk_annuncio) VALUES ( ?, ?, ?, ?, ?)";
 		
 		File file = new File(photo);
 
@@ -40,9 +40,6 @@ public class AnnuncioDAO {
 			preparedStatement.setString(3, annuncio.getDescrizione());
 			preparedStatement.setBinaryStream(4, fis, fis.available());
 			preparedStatement.setInt(5, annuncio.getFkannuncio());
-			preparedStatement.setString(6, annuncio.getPrice());
-			preparedStatement.setString(7, annuncio.getNome());
-			preparedStatement.setString(8, annuncio.getCognome());
 			preparedStatement.executeUpdate();
 
 			connection.commit();
@@ -84,9 +81,6 @@ public class AnnuncioDAO {
 				bean.setId(rs.getInt(1));
 				bean.setNomeLibro(rs.getString("nomelibro"));
 				bean.setImage(rs.getBlob("image"));
-				bean.setPrice(rs.getString("prezzo"));
-				bean.setNome(rs.getString("nome"));
-				bean.setCognome(rs.getString("cognome"));
 				products.add(bean);
 			}
 

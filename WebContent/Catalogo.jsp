@@ -14,6 +14,8 @@
 
 	<%@include file="header.jsp" %>
 	<%@include file="topnav.jsp" %>
+
+	
 <div class = "container">
 		<%
 		if(products != null && products.size() > 0) {
@@ -40,9 +42,9 @@
 				</div>
 
 	<% 		} 
-	 	} else { %>
-			<p> No Products Avaliable</p>
-	<% } %>
+	 	} else {
+			getServletContext().getRequestDispatcher("/ErrorPages/catalogoVuoto.jsp").forward(request, response);
+	 } %>
 		
 </div>
 	 <%@include file="footer.jsp" %>

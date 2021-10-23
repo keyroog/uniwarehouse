@@ -31,7 +31,7 @@
 				<input type="email" placeholder="e-mail" name="email" > <br>
 				<input type="password" id="password" placeholder="password" name="password" onkeyup="check();" ><br>
 				<input type="password" id="conferma_password" placeholder="conferma password" name="conferma_password" onkeyup="check();" ><br>
-				<div class="message" id="message"></div> <br>
+				<div class="message" id="message"> </div> <br>
 				<input type="text" placeholder="Matricola" name="matricola" class="matricola"><br>
 				<input type="tel" placeholder="Cellulare" name="cellulare" ><br>
 				<fieldset>

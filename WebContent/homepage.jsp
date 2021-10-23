@@ -12,20 +12,13 @@
 	<%@include file="header.jsp" %>
 	<%@include file="topnav.jsp" %>
 	
-	<div class="hi_user">
-		<%
-		Utente session_user = new Utente();
-		HttpSession ssn = request.getSession();
-		session_user = (Utente) ssn.getAttribute("user");
-			%> <fieldset> Hi <%=session_user.getNome() %> </fieldset>
-		</div>
-	
 	<div class="boxsearch">
 		<form class="searchbar" action="action_page.php">
   			<input type="text" placeholder="Cerca il tuo libro.." name="search">
   			<button type="submit"> Cerca </button>
 		</form>
 	</div>
+	<%@include file="logOut.jsp" %>
 	<%@include file="footer.jsp" %>
 </body>
 </html>

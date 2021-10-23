@@ -11,7 +11,12 @@
 <%@include file="header.jsp" %>
 <%@include file="topnav.jsp" %>
 	<div class="profile">
-		Nome : <%=su.getNome() %>
+		<fieldset>Nome : <%=su.getNome() %></fieldset>  <button> Modifica </button>
+		<fieldset>Cognome : <%=su.getCognome() %></fieldset>  <button> Modifica </button> 
+		<fieldset>email : <%=su.getEmail() %> </fieldset>  <button> Modifica </button>
+		<fieldset>Matricola : <%=su.getMatricola() %> </fieldset>  <button> Modifica </button>
+		<fieldset>Password : ******** </fieldset>  <button> Modifica </button> 
+		<fieldset>Dipartimento : <%=su.getDipartimento() %>  </fieldset>  <button> Modifica </button>
 	</div>
 <%@include file="footer.jsp" %>
 </body>

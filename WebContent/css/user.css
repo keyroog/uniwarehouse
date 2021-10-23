@@ -1,1 +1,30 @@
 @charset "ISO-8859-1";
+
+
+.profile{
+	margin-top:10%;
+	margin-bottom :10%;
+	margin-left:15%;
+	margin-right: 15%;
+	border: 0px solid #ff4461;
+	border-radius: 10px;
+	
+}
+
+fieldset{
+	border: 5px solid #ff4461; 
+	border-radius: 10px;
+	background-color: white;
+	margin: 1%;
+
+}
+
+.profile button{
+  display: inline-block;;
+  background:#ff4461;
+  border: 3px;
+  color: white;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 3px;
+}

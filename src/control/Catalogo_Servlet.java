@@ -39,10 +39,8 @@ public class Catalogo_Servlet extends HttpServlet {
 		try {
 			catalog = (Collection<Annuncio>) model.doRetrieveAll("idannuncio");
 			if(catalog.isEmpty()) {
-				PrintWriter out = response.getWriter();
-				response.setContentType("text/plain");
-				out.write("No");
-				out.close();
+				RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/ErrorPages/catalogoVuoto.jsp");
+				dispatcher.forward(request, response);
 			}
 			
 			

@@ -25,7 +25,7 @@ public class Signup extends HttpServlet {
 			throws ServletException, IOException {
 		int error=0;
 		
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/accessonegato.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/ErrorPages/accessonegato.jsp");
 		
 		UtenteDao dao = new UtenteDao();
 		

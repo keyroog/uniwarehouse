@@ -11,6 +11,7 @@
 <%@include file="header.jsp" %>
 <%@include file="topnav.jsp" %>
 	<div class="profile">
+		<h1> Informazioni di Contatto </h1>
 		<fieldset>Nome : <%=su.getNome() %></fieldset>  <button> Modifica </button>
 		<fieldset>Cognome : <%=su.getCognome() %></fieldset>  <button> Modifica </button> 
 		<fieldset>email : <%=su.getEmail() %> </fieldset>  <button> Modifica </button>

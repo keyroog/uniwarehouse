@@ -31,7 +31,7 @@
   					<p class="price"><%=bean.getPrice() + "&euro;"%></p>
  					<%String length=bean.getDescrizione();
  						if(length.length()>30){
- 							length=length.substring(1,29);
+ 							length=length.substring(0,29);
  							length+="...";
  						}%>
  					<p><%=length%></p>

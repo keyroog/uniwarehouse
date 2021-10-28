@@ -37,11 +37,10 @@
  					<p><%=bean.getDate()%></p>
  					<p><%=bean.getNome() + " " + bean.getCognome()%></p>
  					<button>Modifica Annuncio</button>
- 					<form action="Rimuovi_Annuncio">
+ 					<form action="Rimuovi_Annuncio" method="post">
  						<input type="hidden" name="annuncio" value=<%=bean.getId()%>>
- 						<input type="submit" value="rimuovi annuncio">
+ 						<input type="submit" value="Rimuovi Annuncio">
  					</form>
-  					<button onclick="location.href='http://localhost:8080/UNIWAREHOUSE/Rimuovi_Annuncio'">Rimuovi Annuncio </button>
 				</div>
 
 	<% 		} 

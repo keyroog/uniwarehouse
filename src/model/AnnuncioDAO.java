@@ -104,4 +104,54 @@ public class AnnuncioDAO {
 
 	}
 	
+	
+	public synchronized Collection<Annuncio> doRetrieveByKey(int matricola) throws SQLException{
+		
+		
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+
+		Collection<Annuncio> products = new ArrayList<Annuncio>();
+		String selectSQL = "SELECT * FROM " + TABLE_NAME + " WHERE fk_annuncio = ?";;
+		
+		
+		
+		try {
+			connection = DriverManagerConnectionPool.getConnection();
+			preparedStatement = connection.prepareStatement(selectSQL);
+			preparedStatement.setInt(1, matricola);
+
+			ResultSet rs = preparedStatement.executeQuery();
+
+			while (rs.next()) {
+				Annuncio bean = new Annuncio();
+				bean.setDate(rs.getDate("datainserimento").toLocalDate());
+				bean.setDescrizione(rs.getString("descrizione"));
+				bean.setFkannuncio(rs.getInt("fk_annuncio"));
+				bean.setId(rs.getInt(1));
+				bean.setNomeLibro(rs.getString("nomelibro"));
+				bean.setImage(rs.getBlob("image"));
+				bean.setPrice(rs.getString("prezzo"));
+				bean.setNome(rs.getString("nome"));
+				bean.setCognome(rs.getString("cognome"));
+				products.add(bean);
+			}
+
+		}
+		
+		finally {
+			try {
+				if (preparedStatement != null)
+					preparedStatement.close();
+			} finally {
+				DriverManagerConnectionPool.releaseConnection(connection);
+			}
+		}
+		
+		return products;
+
+	}
+	
+	
+	
 }

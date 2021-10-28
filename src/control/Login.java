@@ -22,7 +22,7 @@ public class Login extends HttpServlet {
 			throws ServletException, IOException {
 		{
 			
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/accessonegato.jsp");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/ErrorPages/accessonegato.jsp");
 			String username = request.getParameter("email");
 			String password = request.getParameter("password");
 			try {

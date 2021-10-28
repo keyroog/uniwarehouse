@@ -23,7 +23,9 @@
 	<%@include file="header.jsp" %>
 	<%@include file="topnav.jsp" %>
 	
-	<div class="profile">
+	<div class="form_container">
+	<fieldset>
+	<legend>Modifica Password</legend>
 		<form class="pass_reset" action="Modifica_Password" method="post"> 
 			<input type="password" placeholder="password precedente" name="oldpass" required> <br>
 			<input type="password" id="password" placeholder="nuova password" name="newpass" onkeyup="check();"  required> <br>
@@ -31,6 +33,7 @@
 			<div class="message" id="message"> </div> <br>
 			<input type="submit" value="conferma nuova password">
 		</form>
+	</fieldset>
 	</div>
 	
 		<%@include file="footer.jsp" %>

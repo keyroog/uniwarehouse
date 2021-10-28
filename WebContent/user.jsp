@@ -24,7 +24,7 @@
 		<fieldset>Matricola : <%=su.getMatricola() %> </fieldset> 
 		<fieldset>Password : <%= su.getPass() %> </fieldset>
 		<fieldset>Dipartimento : <%=su.getDipartimento() %>  </fieldset> 
-		 <button onclick="window.open('modificapassword.jsp');"> Modifica Password </button>
+		<button onclick="location.href='http://localhost:8080/UNIWAREHOUSE/modificapassword.jsp'"> Modifica Password </button>
 	</div>
 </body>
 </html>

@@ -44,11 +44,8 @@ public class Modifica_Password extends HttpServlet {
 			HttpSession ssn = request.getSession();
 			session_user = (Utente) ssn.getAttribute("user");
 			String username = session_user.getEmail();
-			System.out.println(username);
-			System.out.println(oldpass);
 			session_user = checkLogin(username, oldpass);
 			if(session_user != null) {
-				System.out.println(username);
 				UtenteDao model = new UtenteDao();
 				model.updatePassword(session_user.getMatricola(), newpass);
 				ssn.invalidate();

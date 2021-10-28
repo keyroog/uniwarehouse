@@ -30,8 +30,8 @@
   					<h1><%=bean.getNomeLibro()%></h1>
   					<p class="price"><%=bean.getPrice() + "&euro;"%></p>
  					<%String length=bean.getDescrizione();
- 						if(length.length()>30){
- 							length=length.substring(0,29);
+ 						if(length.length()>23){
+ 							length=length.substring(0,22);
  							length+="...";
  						}%>
  					<p><%=length%></p>

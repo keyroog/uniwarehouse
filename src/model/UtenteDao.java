@@ -152,6 +152,35 @@ public class UtenteDao implements DAOModel {
 	}
 	
 	
+	public synchronized boolean updatePassword(int matricola, String password) throws SQLException {
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+
+		int result = 0;
+
+		String deleteSQL = "UPDATE " + TABLE_NAME + " SET pass = ? WHERE matricola = ?";
+
+		try {
+			connection = DriverManagerConnectionPool.getConnection();
+			preparedStatement = connection.prepareStatement(deleteSQL);
+			preparedStatement.setString(1, password);
+			preparedStatement.setInt(2, matricola);
+			result = preparedStatement.executeUpdate();
+			connection.commit();
+
+		} finally {
+			try {
+				if (preparedStatement != null)
+					preparedStatement.close();
+			} finally {
+				DriverManagerConnectionPool.releaseConnection(connection);
+			}
+		}
+		return (result != 0);
+	}
+	
+	
+	
 	public synchronized Utente checkLoginDB(String email, String password, int code) throws SQLException {
 		Connection connection = null;
 		PreparedStatement preparedStatement = null;

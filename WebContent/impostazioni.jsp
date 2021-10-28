@@ -42,7 +42,7 @@ function loadDoc2() {
 	      this.responseText;
 	    }
 	  };
-	  xhttp.open("GET", "annunci_utente.jsp", true);
+	  xhttp.open("GET", "Annunci_Utente", true);
 	  xhttp.send();
 	}
 </script>

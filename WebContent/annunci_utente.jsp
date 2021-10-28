@@ -13,6 +13,7 @@
 <body>
 
 
+<h1 class="titolo"> I Miei Annunci </h1>
 	
 <div class = "container">
 		<%
@@ -35,8 +36,9 @@
  					<p><%=length%></p>
  					<p><%=bean.getDate()%></p>
  					<p><%=bean.getNome() + " " + bean.getCognome()%></p>
-  					<button>Contattami</button>
-  					<button>Aggiungi alla wishlist</button>
+ 					<button>Modifica Annuncio</button>
+  					<button>Rimuovi Annuncio</button>
+
 				</div>
 
 	<% 		} 

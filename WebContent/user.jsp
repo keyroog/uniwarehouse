@@ -18,12 +18,13 @@
 	%>
 	<div class="profile">
 		<h1> Informazioni di Contatto </h1>
-		<fieldset>Nome : <%=su.getNome() %></fieldset>  <button> Modifica </button>
-		<fieldset>Cognome : <%=su.getCognome() %></fieldset>  <button> Modifica </button> 
-		<fieldset>email : <%=su.getEmail() %> </fieldset>  <button> Modifica </button>
-		<fieldset>Matricola : <%=su.getMatricola() %> </fieldset>  <button> Modifica </button>
-		<fieldset>Password : ******** </fieldset>  <button> Modifica </button> 
-		<fieldset>Dipartimento : <%=su.getDipartimento() %>  </fieldset>  <button> Modifica </button>
+		<fieldset>Nome : <%=su.getNome() %></fieldset>
+		<fieldset>Cognome : <%=su.getCognome() %></fieldset>
+		<fieldset>email : <%=su.getEmail() %> </fieldset>
+		<fieldset>Matricola : <%=su.getMatricola() %> </fieldset> 
+		<fieldset>Password : <%= su.getPass() %> </fieldset>
+		<fieldset>Dipartimento : <%=su.getDipartimento() %>  </fieldset> 
+		 <button onclick="window.open('modificapassword.jsp');"> Modifica Password </button>
 	</div>
 </body>
 </html>

@@ -13,6 +13,7 @@ import javax.servlet.http.HttpSession;
 
 import model.Utente;
 import model.UtenteDao;
+import utilities.Validator;
 
 /**
  * Servlet implementation class Modifica_Password
@@ -34,10 +35,21 @@ public class Modifica_Password extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/ErrorPages/accessonegato.jsp");
+		int error=0;
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/ErrorPages/errorereimpostazione.jsp");
 		String oldpass = request.getParameter("oldpass");
 		String newpass = request.getParameter("newpass");
-		String confimrpass = request.getParameter("confirmpass");
+		String confirmpass = request.getParameter("confirmpass");
+		String p;
+		try {
+			p = Validator.checkPassword(newpass,confirmpass);
+		}catch (Exception e){
+			if(e.getMessage().equals("Invalid Password"))	error = 4;
+			else if(e.getMessage().equals("Password don't match")) error = 5;
+			request.setAttribute("errore-reimpostazione", error);
+			dispatcher.forward(request, response);
+			return;
+		}
 		
 		try {
 			Utente session_user = new Utente();

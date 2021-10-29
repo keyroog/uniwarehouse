@@ -1,8 +1,8 @@
 @charset "ISO-8859-1";
 
-.accessdenied{
+.box{
 	font-style: Sans-Serif;
-	padding: 5% 10% 10% 30%;
+	margin-left:25%;
 }
 
 fieldset{

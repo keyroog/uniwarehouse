@@ -168,7 +168,7 @@ public class AnnuncioDAO {
 			preparedStatement.setInt(1, code);
 
 			result = preparedStatement.executeUpdate();
-
+			connection.commit();
 		} finally {
 			try {
 				if (preparedStatement != null)

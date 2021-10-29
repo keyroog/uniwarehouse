@@ -35,6 +35,7 @@ public class Annunci_Utente extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/ErrorPages/nessunAnnuncio.jsp");
 		AnnuncioDAO model = new AnnuncioDAO();
 		Collection<Annuncio> catalog;
 		HttpSession ssn = request.getSession();
@@ -43,8 +44,8 @@ public class Annunci_Utente extends HttpServlet {
 		try {
 			catalog = (Collection<Annuncio>) model.doRetrieveByKey(matricola);
 			if(catalog.isEmpty()) {
-				RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/ErrorPages/catalogoVuoto.jsp");
 				dispatcher.forward(request, response);
+				return;
 			}
 			
 			
@@ -56,7 +57,7 @@ public class Annunci_Utente extends HttpServlet {
 		}
 		
 
-		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/annunci_utente.jsp");
+		dispatcher = this.getServletContext().getRequestDispatcher("/annunci_utente.jsp");
 		dispatcher.forward(request, response);
 	}
 

@@ -8,7 +8,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Catalogo - UniWarehouse</title>
-<link href="./css/catalogo.css" rel="stylesheet" type="text/css">
+<link href="./css/annunci_utente.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 
@@ -36,7 +36,7 @@
  					<p><%=length%></p>
  					<p><%=bean.getDate()%></p>
  					<p><%=bean.getNome() + " " + bean.getCognome()%></p>
- 					<button>Modifica Annuncio</button>
+ 					<button onclick="location.href='http://localhost:8080/UNIWAREHOUSE/modificaannuncio.jsp'">Modifica Annuncio</button>
  					<form action="Rimuovi_Annuncio" method="post">
  						<input type="hidden" name="annuncio" value=<%=bean.getId()%>>
  						<input type="submit" value="Rimuovi Annuncio">

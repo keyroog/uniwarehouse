@@ -106,7 +106,7 @@ public class Annuncio_Servlet extends HttpServlet {
 		}*/
 
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/homepage.jsp");
-		dispatcher.forward(request, response);
+		dispatcher.include(request, response);
 	}
 
 }

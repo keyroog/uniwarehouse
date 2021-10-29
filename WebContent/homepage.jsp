@@ -2,8 +2,9 @@
     pageEncoding="ISO-8859-1"
     import="model.Utente,java.util.*, model.Annuncio"%>
     
-  <%
- 	Collection<?> products = (Collection<?>) request.getAttribute("catalogo");
+<%
+	ServletContext ctx = getServletContext();
+ 	Collection<?> products = (Collection<?>) ctx.getAttribute("catalogo");
  %>   
 <!DOCTYPE html>
 <html>
@@ -13,6 +14,7 @@
 <link href="./css/homepage.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+
 	<%@include file="header.jsp" %>
 	<%@include file="topnav.jsp" %>
 	
@@ -37,8 +39,8 @@
   					<h1><%=bean.getNomeLibro()%></h1>
   					<p class="price"><%=bean.getPrice() + "&euro;"%></p>
  					<%String length=bean.getDescrizione();
- 						if(length.length()>23){
- 							length=length.substring(0,22);
+ 						if(length.length()>20){
+ 							length=length.substring(0,19);
  							length+="...";
  						}%>
  					<p><%=length%></p>

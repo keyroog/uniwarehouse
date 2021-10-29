@@ -2,15 +2,18 @@ package control;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.Collection;
+import java.util.Iterator;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
+import model.Annuncio;
 import model.AnnuncioDAO;
 
 /**
@@ -35,6 +38,15 @@ public class Rimuovi_Annuncio extends HttpServlet {
 		// TODO Auto-generated method stub
 		AnnuncioDAO model = new AnnuncioDAO();
 		int id = Integer.parseInt(request.getParameter("annuncio"));
+		ServletContext ctx = getServletContext();
+	 	Collection<Annuncio> products = (Collection<Annuncio>) ctx.getAttribute("catalogo");
+		for(Annuncio p: products) {
+			if(p.getId()==id) {
+				products.remove(p);
+				break;
+			}
+		}
+
 		try {
 			model.doDelete(id);
 		} catch (SQLException e) {

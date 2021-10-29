@@ -1,7 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" import="java.util.*, model.Annuncio"%>
 <%
- 	Collection<?> products = (Collection<?>) request.getAttribute("catalogo");
+	ServletContext ctx = getServletContext();
+ 	Collection<?> products = (Collection<?>) ctx.getAttribute("catalogo");
  %>   
 <!DOCTYPE html>
 <html>

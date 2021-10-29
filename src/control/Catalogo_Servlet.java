@@ -5,6 +5,7 @@ import java.sql.SQLException;
 import java.util.Collection;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -42,8 +43,8 @@ public class Catalogo_Servlet extends HttpServlet {
 				dispatcher.forward(request, response);
 			}
 			
-			
-			request.setAttribute("catalogo", catalog);
+			ServletContext ctx = this.getServletContext();
+			ctx.setAttribute("catalogo", catalog);
 				
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

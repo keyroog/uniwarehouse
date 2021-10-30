@@ -5,7 +5,13 @@
 <%
 	ServletContext ctx = getServletContext();
  	Collection<?> products = (Collection<?>) ctx.getAttribute("catalogo");
- %>   
+ 	int b=0;
+ 	b=(Integer)ctx.getAttribute("cambio");
+ 	if(products==null || b==1){
+ 		ctx.setAttribute("cambio",0);
+ 		%><jsp:forward page="/Catalogo_Homepage" /><%
+ 	}
+ %>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +23,6 @@
 
 	<%@include file="header.jsp" %>
 	<%@include file="topnav.jsp" %>
-	
 	<div class="boxsearch">
 		<form class="searchbar" action="action_page.php">
   			<input type="text" placeholder="Cerca il tuo libro.." name="search">
@@ -28,9 +33,9 @@
 <div class = "container">
 		<%
 		if(products != null && products.size() > 0) {
-			
+			int i=0;
 			Iterator<?> it  = products.iterator();
-			while(it.hasNext()) {
+			while(it.hasNext()&&i<3) {
 				Annuncio bean = (Annuncio) it.next();
 	%>
 
@@ -50,8 +55,12 @@
   					<button>Aggiungi alla wishlist</button>
 				</div>
 
-	<% 		} 
-	 	}  %>
+	<% 		i++;
+			} 
+	 	}  else{
+	 		%><h1> Non c'e nulla da comprare</h1><%
+	 	
+	 	}%>
 		
 </div>
 	<%@include file="logOut.jsp" %>

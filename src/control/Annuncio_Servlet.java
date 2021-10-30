@@ -6,6 +6,7 @@ import java.io.PrintWriter;
 import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -93,6 +94,8 @@ public class Annuncio_Servlet extends HttpServlet {
 				part.write(savePath + File.separator + fileName);
 				try {
 					dao.doSave(model, savePath + File.separator + fileName);
+					ServletContext ct=getServletContext();
+					ct.setAttribute("cambio",1);
 				} catch (SQLException e) {
 					System.out.println("Error:" + e.getMessage());
 					}

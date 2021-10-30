@@ -16,16 +16,16 @@ import model.Annuncio;
 import model.AnnuncioDAO;
 
 /**
- * Servlet implementation class Catalogo_Servlet
+ * Servlet implementation class Catalogo_Homepage
  */
-@WebServlet("/Catalogo_Servlet")
-public class Catalogo_Servlet extends HttpServlet {
+@WebServlet("/Catalogo_Homepage")
+public class Catalogo_Homepage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Catalogo_Servlet() {
+    public Catalogo_Homepage() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,12 +34,12 @@ public class Catalogo_Servlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/homepage.jsp");
 		AnnuncioDAO model = new AnnuncioDAO();
 		Collection<Annuncio> catalog;
 		try {
 			catalog = (Collection<Annuncio>) model.doRetrieveAll("idannuncio");
 			if(catalog.isEmpty()) {
-				RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/ErrorPages/catalogoVuoto.jsp");
 				dispatcher.forward(request, response);
 			}
 			
@@ -50,9 +50,6 @@ public class Catalogo_Servlet extends HttpServlet {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-
-		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/catalogo.jsp");
 		dispatcher.forward(request, response);
 	}
 
@@ -62,7 +59,6 @@ public class Catalogo_Servlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
-		
 	}
 
 }

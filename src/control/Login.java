@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -21,7 +22,8 @@ public class Login extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		{
-			
+			ServletContext ct = getServletContext();
+			ct.setAttribute("cambio", 0);
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/ErrorPages/accessonegato.jsp");
 			String username = request.getParameter("email");
 			String password = request.getParameter("password");

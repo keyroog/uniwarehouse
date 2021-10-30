@@ -1,17 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"
     import="model.Utente,java.util.*, model.Annuncio"%>
-    
-<%
-	ServletContext ctx = getServletContext();
- 	Collection<?> products = (Collection<?>) ctx.getAttribute("catalogo");
- 	int b=0;
- 	b=(Integer)ctx.getAttribute("cambio");
- 	if(products==null || b==1){
- 		ctx.setAttribute("cambio",0);
- 		%><jsp:forward page="/Catalogo_Homepage" /><%
- 	}
- %>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,7 +9,15 @@
 <link href="./css/homepage.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-
+<%
+	ServletContext ctx = getServletContext();
+ 	Collection<?> products = (Collection<?>) ctx.getAttribute("catalogo");
+ 	int b;
+ 	b=(Integer)ctx.getAttribute("cambio");
+ 	if(b==1){
+ 		%><jsp:forward page="/Catalogo_Homepage" /><%
+ 	}
+ %>
 	<%@include file="header.jsp" %>
 	<%@include file="topnav.jsp" %>
 	<div class="boxsearch">

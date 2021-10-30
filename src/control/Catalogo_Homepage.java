@@ -37,13 +37,10 @@ public class Catalogo_Homepage extends HttpServlet {
 		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/homepage.jsp");
 		AnnuncioDAO model = new AnnuncioDAO();
 		Collection<Annuncio> catalog;
+		ServletContext ctx = this.getServletContext();
+		ctx.setAttribute("cambio", 0);
 		try {
-			catalog = (Collection<Annuncio>) model.doRetrieveAll("idannuncio");
-			if(catalog.isEmpty()) {
-				dispatcher.forward(request, response);
-			}
-			
-			ServletContext ctx = this.getServletContext();
+			catalog = (Collection<Annuncio>) model.doRetrieveAll("idannuncio");		
 			ctx.setAttribute("catalogo", catalog);
 				
 		} catch (SQLException e) {

@@ -24,7 +24,7 @@ public class Login extends HttpServlet {
 		{
 			ServletContext ct = getServletContext();
 			
-			ct.setAttribute("cambio", 0);
+			ct.setAttribute("cambio", 1);
 			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/ErrorPages/accessonegato.jsp");
 			String username = request.getParameter("email");
 			String password = request.getParameter("password");

@@ -40,7 +40,7 @@
 <%	} %>
 
 <%	if(errore==8){ %>
-	<h1>Invalid Username or password </h1>
+	<h1>Email o Password Errata </h1>
 	<a href="./login.jsp" class="button">RIPROVA</a>
 <%	} %>
 

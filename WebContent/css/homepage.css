@@ -21,7 +21,7 @@ form.searchbar input[type=text] {
   background: white;
 }
 
-form.searchbar button {
+.searchbar button {
 	border-radius:0px 20px 20px 0px;
   float: left;
   width: 15%;
@@ -89,6 +89,18 @@ form.searchbar::after {
 }
 
 .card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  font-size: 10px;
+  display:inline;
+}
+
+.card input[type=submit]{
   border: none;
   outline: 0;
   padding: 12px;

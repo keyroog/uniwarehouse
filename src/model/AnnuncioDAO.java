@@ -152,6 +152,50 @@ public class AnnuncioDAO {
 
 	}
 	
+	public synchronized Annuncio doRetrieveById(int id) throws SQLException{
+		
+		
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+
+		Annuncio bean = new Annuncio();
+		String selectSQL = "SELECT * FROM " + TABLE_NAME + " WHERE idannuncio = ?";;
+		
+		
+		
+		try {
+			connection = DriverManagerConnectionPool.getConnection();
+			preparedStatement = connection.prepareStatement(selectSQL);
+			preparedStatement.setInt(1, id);
+
+			ResultSet rs = preparedStatement.executeQuery();
+
+			while (rs.next()) {
+				bean.setDate(rs.getDate("datainserimento").toLocalDate());
+				bean.setDescrizione(rs.getString("descrizione"));
+				bean.setFkannuncio(rs.getInt("fk_annuncio"));
+				bean.setId(rs.getInt(1));
+				bean.setNomeLibro(rs.getString("nomelibro"));
+				bean.setImage(rs.getBlob("image"));
+				bean.setPrice(rs.getString("prezzo"));
+				bean.setNome(rs.getString("nome"));
+				bean.setCognome(rs.getString("cognome"));
+			}
+
+		}
+		
+		finally {
+			try {
+				if (preparedStatement != null)
+					preparedStatement.close();
+			} finally {
+				DriverManagerConnectionPool.releaseConnection(connection);
+			}
+		}
+		
+		return bean;
+
+	}
 	
 	
 	public synchronized boolean doDelete(int code) throws SQLException {

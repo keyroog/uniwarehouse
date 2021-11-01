@@ -152,7 +152,7 @@ public class AnnuncioDAO {
 
 	}
 	
-	public synchronized Annuncio doRetrieveById(int id) throws SQLException{
+	public synchronized Annuncio doRetrieveById(String id) throws SQLException{
 		
 		
 		Connection connection = null;
@@ -166,7 +166,7 @@ public class AnnuncioDAO {
 		try {
 			connection = DriverManagerConnectionPool.getConnection();
 			preparedStatement = connection.prepareStatement(selectSQL);
-			preparedStatement.setInt(1, id);
+			preparedStatement.setString(1, id);
 
 			ResultSet rs = preparedStatement.executeQuery();
 

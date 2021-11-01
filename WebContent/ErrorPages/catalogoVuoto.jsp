@@ -4,6 +4,7 @@
 </head>
 <body>
 <%@include file="../header.jsp" %>
+<%@include file="../topnav.jsp" %>
 <div class="accessdenied">
 <fieldset>
 <legend>Catalogo Vuoto</legend>

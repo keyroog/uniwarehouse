@@ -68,6 +68,10 @@ public class Annuncio {
 		return idannuncio;
 	}
 	
+	public Blob getImage() {
+		return image;
+	}
+	
 	public String getNomeLibro() {
 		return nomelibro;
 	}

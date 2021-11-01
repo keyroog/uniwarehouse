@@ -49,10 +49,7 @@
  					<p><%=bean.getDate()%></p>
  					<p><%=bean.getNome() + " " + bean.getCognome()%></p>
   					<button>Contattami</button>
-  					<form action="Wishlist_Servlet" method="post">
-    					<input type="hidden" name="id" value=<%bean.getId(); %> />
-    					<input type="submit" value="Add to cart" />
-					</form>
+					<a class="bottoneaggiungi" href="<%=response.encodeURL("ProductControl?action=addCart&id=" + bean.getId())%>">Aggiungi Alla Wishlist</a>
 				</div>
 
 	<% 		i++;

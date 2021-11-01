@@ -12,6 +12,6 @@
   		<a href="http://localhost:8080/UNIWAREHOUSE/homepage.jsp">Home</a>
   		<a href="http://localhost:8080/UNIWAREHOUSE/annuncio.jsp">Vendi</a>
   		<a href="http://localhost:8080/UNIWAREHOUSE/Catalogo_Servlet">Compra</a>
-  		<a href="http://localhost:8080/UNIWAREHOUSE/whishlist.jsp">FAQ</a>
+  		<a href="http://localhost:8080/UNIWAREHOUSE/wishlist.jsp">Wishlist</a>
   		<a href="http://localhost:8080/UNIWAREHOUSE/impostazioni.jsp"><%=su.getNome().toUpperCase() %></a>
 	</div>

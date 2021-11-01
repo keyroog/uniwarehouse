@@ -1,24 +1,37 @@
 package model;
 
-import java.util.Collection;
+import java.util.ArrayList;
+import java.util.List;
+public class Wishlist<T>{
 
-public class Wishlist {
-	private Collection<Annuncio> annunci;
-	
-	public Wishlist() {
-		annunci=null;
-	}
-	
-	public void addItem(Annuncio annuncio) {
-		annunci.add(annuncio);
-	}
-	
-	public void deleteItem(Annuncio annuncio) {
-		annunci.remove(annuncio);
-	}
-	
-	public Collection<Annuncio> getWishlist(){
-		return annunci;
-	}
-	
+		List<T> items;
+
+		public Wishlist() {
+			items = new ArrayList<T>();
+		}
+
+		public void addItem(T item) {
+			items.add(item);
+		}
+
+		public void deleteItem(int id) {
+			/*
+			 * for(T it: items) { 
+			 * 	if(it.equals(item)) { 
+			 * 		items.remove(it); 
+			 * 		break; } }
+			 */
+			items.remove(id);
+		}
+
+		public List<T> getItems() {
+			return items;
+		}
+
+		public void deleteItems() {
+			items.clear();
+		}
 }
+
+	
+

@@ -39,7 +39,7 @@
  					<p><%=bean.getDate()%></p>
  					<p><%=bean.getNome() + " " + bean.getCognome()%></p>
   					<button>Contattami</button>
-  					<button>Aggiungi alla wishlist</button>
+  					<a class="bottoneaggiungi" href="<%=response.encodeURL("ProductControl?action=addCart&id=" + bean.getId())%>">Aggiungi Alla Wishlist</a>
 				</div>
 
 	<% 		} 

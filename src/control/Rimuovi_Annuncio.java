@@ -52,7 +52,7 @@ public class Rimuovi_Annuncio extends HttpServlet {
 		} catch (SQLException e) {
 			e.printStackTrace(); //pagina qualcosa è andato storto
 		}
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/homepage.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/impostazioni.jsp");
 		dispatcher.forward(request, response);
 	}
 

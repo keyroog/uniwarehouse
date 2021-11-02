@@ -1,6 +1,5 @@
 package control;
 
-import java.util.ArrayList;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Collection;
@@ -17,16 +16,16 @@ import model.Annuncio;
 import model.AnnuncioDAO;
 
 /**
- * Servlet implementation class Cerca_Servlet
+ * Servlet implementation class Filtro_Servlet
  */
-@WebServlet("/Cerca_Servlet")
-public class Cerca_Servlet extends HttpServlet {
+@WebServlet("/Filtro_Servlet")
+public class Filtro_Servlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Cerca_Servlet() {
+    public Filtro_Servlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -35,29 +34,29 @@ public class Cerca_Servlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String ricerca = request.getParameter("search");
-		
+		String action = request.getParameter("action");
+		HttpSession ssn  = request.getSession();
 		AnnuncioDAO model = new AnnuncioDAO();
-		Annuncio bean = new Annuncio();
-		Collection<Annuncio> risultato=new ArrayList<Annuncio>();
+		Collection<Annuncio>catalog;
 		try {
-			Collection<Annuncio> annunci = model.doRetrieveAll("idannuncio");
-			if(!annunci.isEmpty()) {
-				for(Annuncio x : annunci) {
-					String nomelibro=x.getNomeLibro();
-					if(nomelibro.contains(ricerca)||ricerca.contains(nomelibro)) {
-						risultato.add(x);
-					}
-				}
+			if(action.equals("tutti")) {
+				catalog = (Collection<Annuncio>) model.doRetrieveAll("idannuncio");
+			}else {
+				catalog = (Collection<Annuncio>) model.doRetrieveByDipartimento(action);
 			}
+			if(catalog.isEmpty()) {
+				ssn.setAttribute("filtrovuoto","1");
+			}
+			ssn.setAttribute("catalogo",catalog);
 		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
+			
 		}
-		HttpSession ssn = request.getSession();
-		ssn.setAttribute("risultato", risultato);
-		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/homepage.jsp");
+		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/catalogo.jsp");
 		dispatcher.forward(request, response);
 	}
+
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

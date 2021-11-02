@@ -2,7 +2,10 @@
     pageEncoding="ISO-8859-1" import="java.util.*, model.Annuncio, model.UtenteDao"%>
 <%
 	ServletContext ctx = getServletContext();
- 	Collection<?> products = (Collection<?>) ctx.getAttribute("catalogo");
+	Collection<?> products = (Collection<?>)request.getSession().getAttribute("catalogo");
+	if(products==null){
+ 		products = (Collection<?>) ctx.getAttribute("catalogo");
+	}
  %>   
 <!DOCTYPE html>
 <html>
@@ -15,6 +18,14 @@
 
 	<%@include file="header.jsp" %>
 	<%@include file="topnav.jsp" %>
+
+<div class="buttonscontainer">
+	<a class="bottoneaggiungi"  href="<%=response.encodeURL("Filtro_Servlet?action=tutti")%>">Tutti</a>
+	<a class="bottoneaggiungi"  href="<%=response.encodeURL("Filtro_Servlet?action=informatica")%>">Informatica</a>
+	<a class="bottoneaggiungi"  href="<%=response.encodeURL("Filtro_Servlet?action=chimica")%>">Chimica</a>
+	<a class="bottoneaggiungi"  href="<%=response.encodeURL("Filtro_Servlet?action=Economia")%>">Economia</a>
+	<a class="bottoneaggiungi"  href="<%=response.encodeURL("Filtro_Servlet?action=Ingegneria")%>">Ingegneria</a>
+</div>
 
 	
 <div class = "container">
@@ -30,6 +41,7 @@
   					<img src="./getPicture?id=<%=bean.getId() %> " onerror="this.src='./imgs/nophoto.png'" style="width:100px">
   					<h1><%=bean.getNomeLibro()%></h1>
   					<p class="price"><%=bean.getPrice() + "&euro;"%></p>
+  					<p class="price"><%=bean.getDipartimento()%></p>
  					<%String length=bean.getDescrizione();
  						if(length.length()>23){
  							length=length.substring(0,22);
@@ -48,10 +60,18 @@
 
 	<% 		} 
 	 	} else {
-			getServletContext().getRequestDispatcher("/ErrorPages/catalogoVuoto.jsp").forward(request, response);
+	 		HttpSession ssn = request.getSession();
+	 		String codice=(String)ssn.getAttribute("filtrovuoto");
+	 		if(codice!=null && codice.equals("1")){
+	 		%><h1 class="nessunlibro">Nessun libro di questa facolta</h1><%
+	 		ssn.setAttribute("filtrovuoto", "0");
+	 		}else{
+				getServletContext().getRequestDispatcher("/ErrorPages/catalogoVuoto.jsp").forward(request, response);
+	 		}
 	 } %>
 		
 </div>
 	 <%@include file="footer.jsp" %>
+	 <%request.getSession().setAttribute("catalogo",null); %>
 </body>
 </html>

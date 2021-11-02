@@ -77,6 +77,7 @@ public class Annuncio_Servlet extends HttpServlet {
 		model.setDescrizione(request.getParameter("descrizione"));
 		model.setNomeLibro(request.getParameter("libro"));
 		model.setPrice(request.getParameter("prezzo"));
+		model.setDipartimento(request.getParameter("dipartimento"));
 		model.setNome(user.getNome());
 		model.setCognome(user.getCognome());
 		

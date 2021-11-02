@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,25 +28,34 @@ public class ProductControl extends HttpServlet {
 			cart = new Wishlist<Annuncio>();
 		}
 		
+		ServletContext ctx = getServletContext();
 		AnnuncioDAO model = new AnnuncioDAO();
 		String sort = request.getParameter("sort");
-
 		String action = request.getParameter("action");
+		
 		try {
 			if (action != null) {
 				if (action.equals("addCart")) {
 					String id = request.getParameter("id");
 					Annuncio bean = model.doRetrieveById(id);
 					if (bean != null) {
-						cart.addItem(bean);
-						request.setAttribute("message", "Product " + bean.getNomeLibro() + " added to cart");
+						if(!cart.isIn(bean.getId())) {
+							cart.addItem(bean);
+							request.setAttribute("message", "Product " + bean.getNomeLibro() + " added to cart");
+						}
 					}
 				} else if (action.equals("delete")) {
 					int id = Integer.parseInt(request.getParameter("id"));
 					cart.deleteItem(id);
 					request.setAttribute("message", "Product deleted");
 					}
+				else if(action.equals("delete2")) {
+					int idrimosso=(int)ctx.getAttribute("idrimosso");
+					if(cart.isIn(idrimosso)) {
+						cart.deleteItem2(idrimosso);
+					}
 				}
+			}
 		} catch (SQLException | NumberFormatException e) {
 			request.setAttribute("error", e.getMessage());
 		}

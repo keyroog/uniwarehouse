@@ -15,7 +15,7 @@
 		<form class=Accedi action=Login method="post">
 			<input type="text" placeholder="email" name="email" required> <br>
 			<input type="password" placeholder="password" name="password" required> <br>
-			<input type="submit" value="Login"><br>
+			<input type="submit" class="bottonesubmit"value="Login"><br>
 		</form>
 		<a class="bottone" href="./sign_up.jsp">Crea Un Account</a>
 	</fieldset>

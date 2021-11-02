@@ -13,6 +13,75 @@
   font-family: sans-serif;
 }
 
+form input[type=submit]{
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: black;
+  text-align: center;
+  cursor: pointer;
+  font-size: 10px;
+  display:inline;
+  border-radius:2px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}
+
+form input[type=submit]:hover{
+	opacity:0.3;
+}
+
+.buttonscontainer {
+	text-align:center;
+	margin-top:50px;
+}
+
+.buttonscontainer .bottoneaggiungi{
+		text-decoration:none;
+border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: black;
+  text-align: center;
+  cursor: pointer;
+  font-size: 20px;
+  display:inline;
+  border-radius:2px;
+  margin-bottom: 50px;
+}
+
+a.bottoneaggiungi{
+	text-decoration:none;
+border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: black;
+  text-align: center;
+  cursor: pointer;
+  font-size: 10px;
+  display:inline;
+  border-radius:2px;
+  margin-bottom: 50px;
+}
+
+a.bottoneaggiungi:hover{
+	opacity:0.3;
+}
+
+form input[type=submit].bottonesubmit{
+  background:#ff4461;
+  border: 3px;
+  color: white;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 25px;
+  margin-top:40px;
+}
 
 footer ul{
 	padding: 0px 50px 20px 10px;

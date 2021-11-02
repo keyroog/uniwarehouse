@@ -26,7 +26,7 @@ public class AnnuncioDAO {
 		PreparedStatement preparedStatement = null;
 
 		String insertSQL = "INSERT INTO " + TABLE_NAME
-				+ " (nomelibro,datainserimento,descrizione,image,fk_annuncio, prezzo, nome, cognome) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?)";
+				+ " (nomelibro,datainserimento,descrizione,image,fk_annuncio, prezzo, nome, cognome,dipartimento) VALUES ( ?, ?, ?, ?, ?, ?, ?, ?,?)";
 		
 		File file = new File(photo);
 
@@ -42,6 +42,7 @@ public class AnnuncioDAO {
 			preparedStatement.setString(6, annuncio.getPrice());
 			preparedStatement.setString(7, annuncio.getNome());
 			preparedStatement.setString(8, annuncio.getCognome());
+			preparedStatement.setString(9,annuncio.getDipartimento());
 			preparedStatement.executeUpdate();
 
 			connection.commit();
@@ -86,6 +87,7 @@ public class AnnuncioDAO {
 				bean.setPrice(rs.getString("prezzo"));
 				bean.setNome(rs.getString("nome"));
 				bean.setCognome(rs.getString("cognome"));
+				bean.setDipartimento(rs.getString("dipartimento"));
 				products.add(bean);
 			}
 
@@ -134,6 +136,55 @@ public class AnnuncioDAO {
 				bean.setPrice(rs.getString("prezzo"));
 				bean.setNome(rs.getString("nome"));
 				bean.setCognome(rs.getString("cognome"));
+				bean.setDipartimento(rs.getString("dipartimento"));
+				products.add(bean);
+			}
+
+		}
+		
+		finally {
+			try {
+				if (preparedStatement != null)
+					preparedStatement.close();
+			} finally {
+				DriverManagerConnectionPool.releaseConnection(connection);
+			}
+		}
+		
+		return products;
+
+	}
+	
+public synchronized Collection<Annuncio> doRetrieveByDipartimento(String dip) throws SQLException{
+		
+		
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+
+		Collection<Annuncio> products = new ArrayList<Annuncio>();
+		String selectSQL = "SELECT * FROM " + TABLE_NAME + " WHERE dipartimento = ?";
+		
+		
+		
+		try {
+			connection = DriverManagerConnectionPool.getConnection();
+			preparedStatement = connection.prepareStatement(selectSQL);
+			preparedStatement.setString(1, dip);
+
+			ResultSet rs = preparedStatement.executeQuery();
+
+			while (rs.next()) {
+				Annuncio bean = new Annuncio();
+				bean.setDate(rs.getDate("datainserimento").toLocalDate());
+				bean.setDescrizione(rs.getString("descrizione"));
+				bean.setFkannuncio(rs.getInt("fk_annuncio"));
+				bean.setId(rs.getInt(1));
+				bean.setNomeLibro(rs.getString("nomelibro"));
+				bean.setImage(rs.getBlob("image"));
+				bean.setPrice(rs.getString("prezzo"));
+				bean.setNome(rs.getString("nome"));
+				bean.setCognome(rs.getString("cognome"));
+				bean.setDipartimento(rs.getString("dipartimento"));
 				products.add(bean);
 			}
 
@@ -180,6 +231,7 @@ public class AnnuncioDAO {
 				bean.setPrice(rs.getString("prezzo"));
 				bean.setNome(rs.getString("nome"));
 				bean.setCognome(rs.getString("cognome"));
+				bean.setDipartimento(rs.getString("dipartimento"));
 			}
 
 		}
@@ -224,6 +276,31 @@ public class AnnuncioDAO {
 		return (result != 0);
 	}
 
-	
+	public synchronized boolean update(String id, String label,String columnName) throws SQLException {
+		Connection connection = null;
+		PreparedStatement preparedStatement = null;
+
+		int result = 0;
+
+		String deleteSQL = "UPDATE " + TABLE_NAME + " SET "+columnName+" = ? WHERE idannuncio = ?";
+
+		try {
+			connection = DriverManagerConnectionPool.getConnection();
+			preparedStatement = connection.prepareStatement(deleteSQL);
+			preparedStatement.setString(1, label);
+			preparedStatement.setString(2, id);
+			result = preparedStatement.executeUpdate();
+			connection.commit();
+
+		} finally {
+			try {
+				if (preparedStatement != null)
+					preparedStatement.close();
+			} finally {
+				DriverManagerConnectionPool.releaseConnection(connection);
+			}
+		}
+		return (result != 0);
+	}
 	
 }

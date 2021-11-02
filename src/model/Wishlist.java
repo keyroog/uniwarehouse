@@ -23,13 +23,38 @@ public class Wishlist<T>{
 			 */
 			items.remove(id);
 		}
-
+		
+		public void deleteItem2(int id) {
+			if(items.size()>0) {
+				for(int i=0;i<items.size();i++) {
+					Annuncio x =(Annuncio) items.get(i);
+					int s=x.getId();
+					if(id==s) {
+						items.remove(i);
+					}
+				}
+			}
+		}
+		
 		public List<T> getItems() {
 			return items;
 		}
 
 		public void deleteItems() {
 			items.clear();
+		}
+		
+		public boolean isIn(int id) {
+			if(items.size()>0) {
+				for(int i=0;i<items.size();i++) {
+					Annuncio x =(Annuncio) items.get(i);
+					int s=x.getId();
+					if(id==s) {
+						return true;
+					}
+				}
+			}
+			return false;
 		}
 }
 

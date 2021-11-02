@@ -10,7 +10,14 @@
  		response.sendRedirect(response.encodeRedirectURL("./ErrorPages/wishlistvuota.jsp"));
  		return;
  	}	
- 	int i=0;	
+ 	int i=0;
+ 	ServletContext ctx = getServletContext();
+ 	String x=(String)ctx.getAttribute("rimosso");
+ 	if(x!=null&&x.equals("1")){
+ 		int idrimosso=(int)ctx.getAttribute("idrimosso");
+ 		ctx.setAttribute("rimosso","0");
+ 		response.sendRedirect(response.encodeRedirectURL("ProductControl?action=delete2&id="+idrimosso));
+ 	}
  %>   
 <!DOCTYPE html>
 <html>
@@ -28,8 +35,8 @@
 	if(prodcart.size() > 0) {}
 	else{	 		
 		response.sendRedirect(response.encodeRedirectURL("./ErrorPages/wishlistvuota.jsp"));
-		return;}
-	%>
+		return;
+	}%>
 		<h1 class="titolo">Wishlist</h1>
 	<%
 		if(prodcart.size() > 0) {

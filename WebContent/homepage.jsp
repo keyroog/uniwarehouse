@@ -12,8 +12,12 @@
 <body>
 
 <%
+	HttpSession ssn = request.getSession();
+	Collection<?>products= (Collection<?>)ssn.getAttribute("risultato");
 	ServletContext ctx = getServletContext();
- 	Collection<?> products = (Collection<?>) ctx.getAttribute("catalogo");
+	if(products==null){
+	 	products = (Collection<?>) ctx.getAttribute("catalogo");
+	}
  	int b;
  	b=(Integer)ctx.getAttribute("cambio");
  	if(b==1){
@@ -33,13 +37,15 @@
 		<%
 		if(products != null && products.size() > 0) {
 			int i=0;
+			int x=3;
 			Iterator<?> it  = products.iterator();
-			while(it.hasNext()&&i<3) {
+			while(it.hasNext()&&i<x) {
 				Annuncio bean = (Annuncio) it.next();
 		%>
-				<div class="card">
+				<div class="card" >
   					<img src="./getPicture?id=<%=bean.getId() %> " onerror="this.src='./imgs/nophoto.png'" style="width:100px">
   					<h1><%=bean.getNomeLibro()%></h1>
+  					<p class="price"><%=bean.getDipartimento()%></p>
   					<p class="price"><%=bean.getPrice() + "&euro;"%></p>
  					<%String length=bean.getDescrizione();
  						if(length.length()>20){
@@ -67,5 +73,6 @@
 </div>
 	<%@include file="logOut.jsp" %>
 	<%@include file="footer.jsp" %>
+<%ssn.setAttribute("risultato", null); %>
 </body>
 </html>

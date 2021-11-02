@@ -18,7 +18,13 @@
 			<textarea name="descrizione" placeholder="Scrivi una breve descrizione del libro..." rows="10" cols="50"></textarea> <br>
 			<input class="file" type="file" name="talkPhoto" value="" maxlength="255">	<br>
 			<input type="text" placeholder="Prezzo " name="prezzo" required> <br>
-			<input type="submit" value="Pubblica">
+			<select id="dipartimento" name="dipartimento">
+	    					<option value="informatica">Informatica</option>
+	    					<option value="ingegneria">Ignegneria</option>
+	    					<option value="economia">Economia</option>
+	    					<option value="chimica">Chimica</option>
+	  		</select><br><br>
+			<input type="submit" class="bottonesubmit"value="Pubblica">
 		</form>
 	</fieldset>
 	</div>

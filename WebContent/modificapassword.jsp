@@ -31,7 +31,7 @@
 			<input type="password" id="password" placeholder="nuova password" name="newpass" onkeyup="check();"  required> <br>
 			<input type="password" id="conferma_password" placeholder="conferma password" name="confirmpass" onkeyup="check();" required> <br>
 			<div class="message" id="message"> </div> <br>
-			<input type="submit" value="conferma nuova password">
+			<input type="submit" class="bottonesubmit"value="conferma nuova password">
 		</form>
 	</fieldset>
 	</div>

@@ -36,7 +36,7 @@
  					<p><%=length%></p>
  					<p><%=bean.getDate()%></p>
  					<p><%=bean.getNome() + " " + bean.getCognome()%></p>
- 					<button onclick="location.href='http://localhost:8080/UNIWAREHOUSE/modificaannuncio.jsp'">Modifica Annuncio</button>
+ 					<a class="bottoneaggiungi" href="<%=response.encodeURL("modificaannuncio.jsp?id=" + bean.getId())%>">Modifica Annuncio</a>
  					<form action="Rimuovi_Annuncio" method="post">
  						<input type="hidden" name="annuncio" value=<%=bean.getId()%>>
  						<input type="submit" value="Rimuovi Annuncio">

@@ -15,6 +15,7 @@ public class Annuncio {
 	private String price;
 	private String nome;
 	private String cognome;
+	private String dipartimento;
 	private Blob image;
 	
 	
@@ -101,6 +102,13 @@ public class Annuncio {
 		return nome;
 	}
 	
+	public String getDipartimento() {
+		return dipartimento;
+	}
+	
+	public void setDipartimento(String dip) {
+		dipartimento=dip;
+	}
 	
 	public String getCognome() {
 		return cognome;

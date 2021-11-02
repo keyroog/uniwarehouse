@@ -18,6 +18,13 @@ form input[type=text],[type=password],[type=email],[type=tel], [type=date]{
   align-content: center;
 }
 
+#dipartimento{
+	margin-top:20px;
+	width: 200px;
+    height: 30px;
+    font-size: 20px;
+}
+
 
 fieldset{
   border-radius:30px;
@@ -86,5 +93,9 @@ textarea{
 	margin-top:40px;
 	border-radius: 3px;
 	font-style: sans-serif;
+}
+
+.imagecontainer{
+	margin-top:20px;
 }
 

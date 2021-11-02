@@ -69,6 +69,7 @@ public class UtenteDao implements DAOModel {
 				bean.setEmail(rs.getString("EMAIL"));
 				bean.setTipolaurea(rs.getString("TIPOLAUREA"));
 				bean.setDipartimento(rs.getString("DIPARTIMENTO"));
+				bean.setCellulare(rs.getString("CELLULARE"));
 			}
 
 		} finally {

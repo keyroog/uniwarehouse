@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"
-    import="model.Utente,java.util.*, model.Annuncio"%>
+    import="model.Utente,java.util.*, model.Annuncio, model.UtenteDao"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -49,7 +49,11 @@
  					<p><%=length%></p>
  					<p><%=bean.getDate()%></p>
  					<p><%=bean.getNome() + " " + bean.getCognome()%></p>
-  					<button>Contattami</button>
+ 					<% Utente user = new Utente();
+ 					UtenteDao userdao = new UtenteDao();
+ 					user = (Utente) userdao.doRetrieveByKey(bean.getFkannuncio());
+ 					%>
+					<a class="bottoneaggiungi" href="https://wa.me/+39<%=user.getCellulare()%>?text=Sarei%20interessato%20al%20tuo%20annuncio">Contattami</a>
 					<a class="bottoneaggiungi" href="<%=response.encodeURL("ProductControl?action=addCart&id=" + bean.getId())%>">Aggiungi Alla Wishlist</a>
 				</div>
 

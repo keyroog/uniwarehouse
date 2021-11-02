@@ -1,0 +1,140 @@
+@charset "ISO-8859-1";
+@charset "ISO-8859-1";
+
+.accessdenied{
+	font-style: Sans-Serif;
+	padding: 5% 10% 10% 30%;
+}
+
+fieldset{
+  border-radius:30px;
+  color:black;
+  border: 15px solid #E5BE01;
+  font-style: Sans-Serif;
+  text-align: center;
+  width: 500px;
+  background-image: linear-gradient(to top, #FFFFFF 100%, #061737 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+}
+
+legend{
+	font-size: 25px;
+	font-weight: bold;
+	background-color: #ff4461;
+	border-radius:20px;
+	color: white;
+	border: 15px solid #ff4461;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
+}
+
+
+.button{
+	background-color: #ff4461;
+	border: none;
+	color: white;
+	padding: 15px 32px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+}
+
+
+
+.footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #E5BE01;
+  color: black;
+  text-align: center;
+  display: flex;
+  font-family: sans-serif;
+}
+
+
+footer ul{
+	padding: 0px 50px 20px 10px;
+	margin-left: 10%;
+}
+
+.copy{
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  color: black;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 7px;
+}
+
+body{
+	background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+	background-image: linear-gradient(to top, #f7e89f 45%, #F8F32B 55%);
+	background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+
+body{
+	margin:0;
+	font-family : sans-serif;
+	background-color: #829bb0;
+}
+
+header {
+	margin-top:0px;
+	margin-left:0px;
+	margin-right:0px;
+  	background-color: #E5BE01;
+	padding: 20px;
+  	font-size: 20px;
+  	color: black;
+}
+
+header h1{
+  display:inline;
+  margin-left:20px;
+  position: relative;
+
+}
+
+img.logo{
+	margin:0;
+	padding:0;
+	height:2%;
+	width:2%;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+  margin-top:0px;
+  background-color: #ff4461;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 18px 8%;
+  text-decoration: none;
+  font-size: 15px;
+  margin:0;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #ff9900;
+  color: white;
+  opacity: 0.7;
+}
+
+
+.tabella{
+	border:2px
+}

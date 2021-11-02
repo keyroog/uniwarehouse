@@ -1,10 +1,17 @@
-<%@ page isErrorPage="true"%>
+<%@ page isErrorPage="true" %>  
 <head>
-<link href="./css/accessonegato.css" rel="stylesheet" type="text/css">
-<meta charset="ISO-8859-1">
-<title>Wishlist - Uniwarehouse</title>
+
+<link href="../css/wishlistvuota.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <%@include file="../header.jsp" %>
-
+<%@include file="../topnav.jsp" %>
+<div class="accessdenied">
+<fieldset>
+<legend>Wishlist vuota</legend>
+<h1>Torna Quando Avrai Aggiunto Qualcosa</h1>
+<a href="../homepage.jsp" class="button">Torna Indietro</a>
+</fieldset>
+</div>
+<%@include file="../footer.jsp" %>
 </body>

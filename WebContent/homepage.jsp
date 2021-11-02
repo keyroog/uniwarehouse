@@ -4,11 +4,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <meta charset="ISO-8859-1">
 <title>UniWareHouse</title>
 <link href="./css/homepage.css" rel="stylesheet" type="text/css">
 </head>
 <body>
+
 <%
 	ServletContext ctx = getServletContext();
  	Collection<?> products = (Collection<?>) ctx.getAttribute("catalogo");
@@ -34,8 +36,7 @@
 			Iterator<?> it  = products.iterator();
 			while(it.hasNext()&&i<3) {
 				Annuncio bean = (Annuncio) it.next();
-	%>
-
+		%>
 				<div class="card">
   					<img src="./getPicture?id=<%=bean.getId() %> " onerror="this.src='./imgs/nophoto.png'" style="width:100px">
   					<h1><%=bean.getNomeLibro()%></h1>

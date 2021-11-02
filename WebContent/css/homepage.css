@@ -90,7 +90,7 @@ form.searchbar::after {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   text-align: center;
   font-family: arial;
-  max-width:200px;
+  max-width:250px;
   margin-top:5%;
   margin-left:20px;
   padding-top: 5%;
@@ -99,6 +99,7 @@ form.searchbar::after {
   padding-bottom:20px;
   background-color:white;
   border-radius:30px;
+  position: relative;
 }
 
 .price {

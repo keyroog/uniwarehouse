@@ -6,7 +6,10 @@ body{
 	background-color: #829bb0;
 }
 
-
+.mostracontainer{
+	margin-left:110px;
+	margin-top:30px;
+}
 
 header {
 	margin-top:0px;

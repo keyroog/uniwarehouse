@@ -71,27 +71,6 @@ form input[type=text],[type=password],[type=email],[type=tel]{
   background: white;
 }
 
-
-form input[type=submit],[type=reset]{
-  background:#ff4461;
-  border: 3px;
-  color: white;
-  text-decoration: none;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 3px;
-  font-size: 25px;
-  margin-top:40px;
-}
-
-form input[type=submit]:hover{
-	opacity: 0.5;;
-}
-
-form input[type=reset]:hover{
-	opacity: 0.5;;
-}
-
 h1.invio{
 	
 	padding-top:0px;

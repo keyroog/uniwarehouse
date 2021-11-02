@@ -51,8 +51,8 @@
 	  					</select><br><br>
 				</fieldset>
 				<h1 class="invio">
-				<input type="reset" value="Reset">
-				<input type="submit" value="conferma">
+				<input type="reset" class="bottonesubmit" value="Reset">
+				<input type="submit" class="bottonesubmit" value="conferma">
 				</h1>
 			</form>
 			</div>

@@ -34,14 +34,17 @@ public class Login extends HttpServlet {
 				HttpSession ctx = request.getSession();
 				ctx.setAttribute("user", session_user);
 				 dispatcher = getServletContext().getRequestDispatcher("/homepage.jsp");
-				
+				if(checkAdmin(username,password)) {
+					request.getSession().setAttribute("adminRoles", true);
+				}else {
+					request.getSession().setAttribute("adminRoles", false);
+				}
 				/*deve ritornarmi il bean cosi lo metto nella sessione facendo sss.SetAttribute("user", Bean che torna) 
 				 * a questo punto in Annuncio_Servlet
 				 * quando devo andare a configurare la matricola prendo l'user dalla sessione e faccio il getMatricola
 				 */
 				 dispatcher.forward(request, response);
 			} catch (Exception e) {
-				request.getSession().setAttribute("adminRoles", false);
 				request.setAttribute("errore-registrazione", 8);
 				dispatcher.forward(request, response);
 			}
@@ -66,6 +69,13 @@ public class Login extends HttpServlet {
 		}
 		return null;
 		
+	}
+	
+	private boolean checkAdmin(String email,String password) {
+		if("keyroog@hotmail.com".equals(email)&&"asdasd".equals(password)){
+			return true;
+		}
+		return false;
 	}
 	
 	

@@ -39,7 +39,7 @@
 
 				<div class="card">
   					<img src="./getPicture?id=<%=bean.getId() %> " onerror="this.src='./imgs/nophoto.png'" style="width:100px">
-  					<h1><%=bean.getNomeLibro()%></h1>
+  					<a class="post" href="<%=response.encodeURL("post.jsp?id=" + bean.getId())%>"><h1><%=bean.getNomeLibro()%></h1></a>
   					<p class="price"><%=bean.getPrice() + "&euro;"%></p>
   					<p class="price"><%=bean.getDipartimento()%></p>
  					<%String length=bean.getDescrizione();

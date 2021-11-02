@@ -52,6 +52,8 @@ border: none;
   margin-bottom: 50px;
 }
 
+
+
 a.bottoneaggiungi{
 	text-decoration:none;
 border: none;
@@ -81,6 +83,23 @@ form input[type=submit].bottonesubmit{
   border-radius: 3px;
   font-size: 25px;
   margin-top:40px;
+}
+
+form input[type=reset].bottonesubmit{
+  background:#ff4461;
+  border: 3px;
+  color: white;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 3px;
+  font-size: 25px;
+  margin-top:40px;
+   padding: 12px;
+}
+
+form input[type=reset].bottonesubmit:hover{
+	opacity:0.3;
 }
 
 footer ul{

@@ -36,15 +36,20 @@
 <div class = "container">
 		<%
 		if(products != null && products.size() > 0) {
-			int i=0;
-			int x=3;
+			int i=0,z=0;
+			String  x=request.getParameter("x");
+			if(x!=null){
+				z = Integer.parseInt(x);
+			}else{
+				z=3;
+			}
 			Iterator<?> it  = products.iterator();
-			while(it.hasNext()&&i<x) {
+			while(it.hasNext()&&i<z) {
 				Annuncio bean = (Annuncio) it.next();
 		%>
 				<div class="card" >
   					<img src="./getPicture?id=<%=bean.getId() %> " onerror="this.src='./imgs/nophoto.png'" style="width:100px">
-  					<h1><%=bean.getNomeLibro()%></h1>
+  					<a class="post" href="<%=response.encodeURL("post.jsp?id=" + bean.getId())%>"><h1><%=bean.getNomeLibro()%></h1></a>
   					<p class="price"><%=bean.getDipartimento()%></p>
   					<p class="price"><%=bean.getPrice() + "&euro;"%></p>
  					<%String length=bean.getDescrizione();
@@ -62,14 +67,20 @@
 					<a class="bottoneaggiungi" href="https://wa.me/+39<%=user.getCellulare()%>?text=Sarei%20interessato%20al%20tuo%20annuncio">Contattami</a>
 					<a class="bottoneaggiungi" href="<%=response.encodeURL("ProductControl?action=addCart&id=" + bean.getId())%>">Aggiungi Alla Wishlist</a>
 				</div>
-
 	<% 		i++;
-			} 
-	 	}  else{
+			}%> 
+			<div class="mostracontainer">
+			<%z=z+3;%>
+			<a class="bottoneaggiungi" href="<%=response.encodeURL("homepage.jsp?x=" + z)%>">Carica Altro</a>
+			
+			
+			<%z=z-6;%>
+			<a class="bottoneaggiungi" href="<%=response.encodeURL("homepage.jsp?x=" + z )%>">Mostra Meno</a>
+			</div>
+			<%}  else{
 	 		%><h1> Non c'e nulla da comprare</h1><%
 	 	
 	 	}%>
-		
 </div>
 	<%@include file="logOut.jsp" %>
 	<%@include file="footer.jsp" %>

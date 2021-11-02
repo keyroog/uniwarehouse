@@ -1,0 +1,84 @@
+@charset "ISO-8859-1";
+
+h1 {
+  font-size: 2.5rem;
+  padding-top:10px;
+  padding-bottom:10px;
+}
+
+
+img {
+  max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+p.descrizione{
+	font-size:40px;
+}
+
+p.venditore{
+	font-size:20px;
+}
+
+.description {
+  border-top: 1rem solid #ff4461;
+    margin: 2rem 0;
+    padding: 1rem 0 0 0;
+    border-radius: 20px;
+    border-bottom: 1rem solid #ff4461;
+}
+
+.add-to-cart {
+  position: relative;
+  display: inline-block;
+  background: button;
+  color: white;
+  border: none;
+  border-radius: 0;
+  padding: 1.25rem 2.5rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+  transform: translateZ(0);
+  transition: color 0.3s ease;
+  letter-spacing: 0.0625rem;
+}
+
+div.grid.product{
+padding: 0 0 1.5rem 0;
+    border-bottom: 0.0625rem solid gray;
+    background-color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 40px;
+    margin-left: 20%;
+    margin-right: 20%;
+      text-align:center;
+}
+
+.product-image {
+	padding-top:5%;
+    max-width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+a.bottoneaggiungi{
+	text-decoration:none;
+	border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: black;
+  text-align: center;
+  cursor: pointer;
+  font-size: 10px;
+  display:inline;
+  border-radius:2px;
+  margin-bottom: 50px;
+}
+
+a.bottoneaggiungi:hover{
+	opacity:0.3;
+}

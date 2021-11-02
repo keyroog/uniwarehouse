@@ -1,5 +1,9 @@
 @charset "ISO-8859-1";
 
+a.post{
+	color:black;
+}
+
 a.bottoneaggiungi{
 	text-decoration:none;
 border: none;

@@ -1,0 +1,32 @@
+@charset "ISO-8859-1";
+
+div.admincontainer{
+	margin-left:20%;
+	margin-right:20%;
+	padding-top:20px;
+}
+
+div.utente p{
+	font-size:20px;
+}
+
+div.utente{
+	background-color:white;
+	border-radius:10px;
+	margin-bottom:20px;
+	padding:5px;
+}
+
+.utente a{
+	  border: none;
+  outline: 0;
+  padding: 7px;
+  color: white;
+  background-color: black;
+  text-align: center;
+  cursor: pointer;
+  font-size: 10px;
+  border-radius:2px;
+  margin-bottom: 10px;
+  margin-top: 20px;
+}

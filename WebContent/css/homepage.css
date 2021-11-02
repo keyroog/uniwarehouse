@@ -1,6 +1,5 @@
 @charset "ISO-8859-1";
 
-
 .bottoneaggiungi{
   border: none;
   outline: 0;
@@ -84,6 +83,10 @@ form.searchbar::after {
 	margin-left:35%;
 	margin-top: 5%;
 	margin-bottom:20%;
+}
+
+a.post{
+	color:black;
 }
 
 .card {

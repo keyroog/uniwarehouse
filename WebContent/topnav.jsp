@@ -6,9 +6,15 @@
 		su = (Utente) ssnn.getAttribute("user");
 		if(su==null){
 			getServletContext().getRequestDispatcher("/login.jsp").forward(request, response);
-		}else
+		}
 	%>
 	<div class="topnav">
+		<%
+		Boolean adminRoles = (Boolean) ssnn.getAttribute("adminRoles");
+		if ((adminRoles != null) && (adminRoles==true))
+		{%>
+		<a href="http://localhost:8080/UNIWAREHOUSE/admin.jsp">Admin</a>
+		<%}%>
   		<a href="http://localhost:8080/UNIWAREHOUSE/homepage.jsp">Home</a>
   		<a href="http://localhost:8080/UNIWAREHOUSE/annuncio.jsp">Vendi</a>
   		<a href="http://localhost:8080/UNIWAREHOUSE/Catalogo_Servlet">Compra</a>

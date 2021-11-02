@@ -90,7 +90,7 @@ public class UtenteDao implements DAOModel {
 
 		int result = 0;
 
-		String deleteSQL = "DELETE FROM " + TABLE_NAME + " WHERE MATRICOLA = ?";
+		String deleteSQL = "DELETE FROM " + TABLE_NAME + " WHERE matricola = ?";
 
 		try {
 			connection = DriverManagerConnectionPool.getConnection();
@@ -98,7 +98,7 @@ public class UtenteDao implements DAOModel {
 			preparedStatement.setInt(1, code);
 
 			result = preparedStatement.executeUpdate();
-
+			connection.commit();
 		} finally {
 			try {
 				if (preparedStatement != null)
@@ -109,7 +109,7 @@ public class UtenteDao implements DAOModel {
 		}
 		return (result != 0);
 	}
-
+	
 	@Override
 	public synchronized Collection<Utente> doRetrieveAll(String order) throws SQLException {
 		Connection connection = null;

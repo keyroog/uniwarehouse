@@ -23,7 +23,7 @@
 	<%@include file="header.jsp" %>
 	<%@include file="topnav.jsp" %>
 	<div class="boxsearch">
-		<form class="searchbar" action="action_page.php">
+		<form class="searchbar" action="Cerca_Servlet" method=get>
   			<input type="text" placeholder="Cerca il tuo libro.." name="search">
   			<button type="submit"> Cerca </button>
 		</form>

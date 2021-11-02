@@ -38,7 +38,6 @@ public class Cerca_Servlet extends HttpServlet {
 		String ricerca = request.getParameter("search");
 		
 		AnnuncioDAO model = new AnnuncioDAO();
-		Annuncio bean = new Annuncio();
 		Collection<Annuncio> risultato=new ArrayList<Annuncio>();
 		try {
 			Collection<Annuncio> annunci = model.doRetrieveAll("idannuncio");

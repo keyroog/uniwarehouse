@@ -14,4 +14,12 @@
     <servlet-name>Signup</servlet-name>
     <servlet-class>control.Signup</servlet-class>
   </servlet>
+  <error-page>
+    <error-code>404</error-code>
+    <location>/ErrorPages/notFound.html</location>
+  </error-page>
+  <error-page>
+    <error-code>500</error-code>
+    <location>/ErrorPages/ServerError.html</location>
+  </error-page>
 </web-app>

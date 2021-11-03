@@ -82,7 +82,6 @@
 	 	
 	 	}%>
 </div>
-	<%@include file="logOut.jsp" %>
 	<%@include file="footer.jsp" %>
 <%ssn.setAttribute("risultato", null); %>
 </body>

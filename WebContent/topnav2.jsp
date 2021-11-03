@@ -20,9 +20,9 @@ body {
   float: left;
   color: white;
   text-align: center;
-  padding: 18px 8%;
+  padding: 15px 6%;
   text-decoration: none;
-  font-size: 15px;
+  font-size: 12px;
   margin:0;
 }
 
@@ -87,6 +87,7 @@ body {
   		<a href="http://localhost:8080/UNIWAREHOUSE/Catalogo_Servlet">Compra</a>
   		<a href="http://localhost:8080/UNIWAREHOUSE/wishlist.jsp">Wishlist</a>
   		<a href="http://localhost:8080/UNIWAREHOUSE/impostazioni.jsp"><%=su.getNome().toUpperCase() %></a>
+  		<a href="<%=response.encodeURL("Logout_Servlet")%>">LogOut</a>
   		<a href="javascript:void(0);" class="icon" onclick="myFunction()">
     		<i class="fa fa-bars"></i>
   		</a>

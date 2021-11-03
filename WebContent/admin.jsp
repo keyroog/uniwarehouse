@@ -9,7 +9,7 @@
 </head>
 <body>
 	<%@include file="header.jsp" %>
-	<%@include file="topnav.jsp" %>
+	<%@include file="topnav2.jsp" %>
 <%
 	UtenteDao model = new UtenteDao();
 	Collection<Utente> beans= model.doRetrieveAll("matricola");

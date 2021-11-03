@@ -10,7 +10,7 @@
 <body>
 
 <%@include file="header.jsp" %>
-<%@include file="topnav.jsp" %>
+<%@include file="topnav2.jsp" %>
 
 
 <div id="demo">

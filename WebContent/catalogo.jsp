@@ -17,8 +17,7 @@
 <body>
 
 	<%@include file="header.jsp" %>
-	<%@include file="topnav.jsp" %>
-
+	<%@include file="topnav2.jsp" %>
 <div class="buttonscontainer">
 	<a class="bottoneaggiungi"  href="<%=response.encodeURL("Filtro_Servlet?action=tutti")%>">Tutti</a>
 	<a class="bottoneaggiungi"  href="<%=response.encodeURL("Filtro_Servlet?action=informatica")%>">Informatica</a>

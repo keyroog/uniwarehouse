@@ -25,7 +25,7 @@
  	}
  %>
 	<%@include file="header.jsp" %>
-	<%@include file="topnav.jsp" %>
+	<%@include file="topnav2.jsp" %>
 	<div class="boxsearch">
 		<form class="searchbar" action="Cerca_Servlet" method=get>
   			<input type="text" placeholder="Cerca il tuo libro.." name="search">

@@ -124,3 +124,32 @@ body{
   background-repeat: no-repeat;
 }
 
+
+@media screen and (max-width: 600px){
+.footer {
+  position: relative;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #E5BE01;
+  color: black;
+  display:block;
+  text-align: center;
+  font-family: sans-serif;
+}
+
+.buttonscontainer .bottoneaggiungi{
+		text-decoration:none;
+border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: black;
+  text-align: center;
+  cursor: pointer;
+  font-size: 10px;
+  display:inline;
+  border-radius:2px;
+  margin-bottom: 50px;
+}
+}

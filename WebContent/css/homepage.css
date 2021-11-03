@@ -41,7 +41,6 @@ form.searchbar input[type=text] {
 .searchbar button {
 	border-radius:0px 20px 20px 0px;
   float: left;
-  width: 15%;
   padding: 10px;
   background: #ff4461;
   color: white;
@@ -132,4 +131,10 @@ a.post{
   cursor: pointer;
   font-size: 10px;
   display:inline;
+}
+
+@media screen and (max-width: 600px){
+	.container{
+		margin-left:15%;
+	}
 }

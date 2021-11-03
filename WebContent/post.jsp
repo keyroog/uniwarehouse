@@ -19,7 +19,7 @@
 </head>
 <body>
 		<%@include file="header.jsp" %>
-		<%@include file="topnav.jsp" %>	
+		<%@include file="topnav2.jsp" %>
 		<div class="grid product">
       <div class="column-xs-12 column-md-7">
         <div class="product-gallery">

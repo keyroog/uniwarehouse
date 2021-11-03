@@ -99,3 +99,13 @@ textarea{
 	margin-top:20px;
 }
 
+@media screen and (max-width: 600px){
+	fieldset{
+		width:100%;
+	}
+	.form_container{
+	font-style: Sans-Serif;
+	width:100%;
+}
+}
+

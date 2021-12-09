@@ -43,6 +43,14 @@
   	<url-pattern>/control/Catalogo_Homepage</url-pattern>
   </servlet-mapping>
   <servlet>
+    <servlet-name>Catalogo_Servlet</servlet-name>
+    <servlet-class>control.Catalogo_Servlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>Catalogo_Servlet</servlet-name>
+  	<url-pattern>/control/Catalogo_Servlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
     <servlet-name>Cerca_Servlet</servlet-name>
     <servlet-class>control.Cerca_Servlet</servlet-class>
   </servlet>
@@ -117,9 +125,5 @@
   <error-page>
     <error-code>404</error-code>
     <location>/ErrorPages/notFound.html</location>
-  </error-page>
-  <error-page>
-    <error-code>500</error-code>
-    <location>/ErrorPages/ServerError.html</location>
   </error-page>
 </web-app>

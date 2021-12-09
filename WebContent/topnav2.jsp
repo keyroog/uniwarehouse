@@ -71,7 +71,7 @@ body {
 		HttpSession ssnn = request.getSession();
 		su = (Utente) ssnn.getAttribute("user");
 		if(su==null){
-			getServletContext().getRequestDispatcher("/login.jsp").forward(request, response);
+			getServletContext().getRequestDispatcher("/landing.jsp").forward(request, response);
 		}
 	%>
 

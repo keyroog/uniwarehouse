@@ -3,8 +3,8 @@
 <link href="./css/accessonegato.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<%@include file="../header.jsp" %>
-<%@include file="../topnav2.jsp" %>
+<%@include file="../JSP/header.jsp" %>
+<%@include file="../JSP/topnav2.jsp" %>
 <div class="accessdenied">
 <fieldset>
 <legend>Catalogo Vuoto</legend>
@@ -13,5 +13,5 @@
 </fieldset>
 </div>
 
-<%@include file="../footer.jsp" %>
+<%@include file="../JSP/footer.jsp" %>
 </body>

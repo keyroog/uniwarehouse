@@ -3,7 +3,7 @@
 <link href="./css/accessonegato.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<%@include file="../JSP/header.jsp" %>
+<%@include file="../header.jsp" %>
 <div class="accessdenied">
 <fieldset>
 <legend>Errore di reimpostazione</legend>
@@ -19,5 +19,5 @@
 </fieldset>
 </div>
 
-<%@include file="../JSP/footer.jsp" %>
+<%@include file="../footer.jsp" %>
 </body>

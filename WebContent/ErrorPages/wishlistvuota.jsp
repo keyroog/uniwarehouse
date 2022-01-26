@@ -4,8 +4,8 @@
 <link href="../css/wishlistvuota.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-<%@include file="../JSP/header.jsp" %>
-<%@include file="../JSP/topnav2.jsp" %>
+<%@include file="../header.jsp" %>
+<%@include file="../topnav2.jsp" %>
 <div class="accessdenied">
 <fieldset>
 <legend>Wishlist vuota</legend>
@@ -13,5 +13,5 @@
 <a href="../homepage.jsp" class="button">Torna Indietro</a>
 </fieldset>
 </div>
-<%@include file="../JSP/footer.jsp" %>
+<%@include file="../footer.jsp" %>
 </body>

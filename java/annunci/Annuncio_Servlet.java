@@ -4,6 +4,8 @@ import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletContext;
@@ -73,6 +75,22 @@ public class Annuncio_Servlet extends HttpServlet {
 		model.setDate();
 		model.setDescrizione(request.getParameter("descrizione"));
 		model.setNomeLibro(request.getParameter("libro"));
+		String prezzo = request.getParameter("prezzo");
+		char segno=prezzo.charAt(0);
+		if(segno=='-') {
+			request.setAttribute("errore-inserimento", 1);
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/ErrorPages/erroreInserimento.jsp");
+			dispatcher.forward(request, response);
+			return;
+		}
+		Pattern p = Pattern.compile("[0-9]{1,}[,][0-9]{2,}");
+		Matcher m = p.matcher(prezzo);
+		if(!m.matches()) {
+			request.setAttribute("errore-inserimento", 2);
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/ErrorPages/erroreInserimento.jsp");
+			dispatcher.forward(request, response);
+			return;
+		}
 		model.setPrice(request.getParameter("prezzo"));
 		model.setDipartimento(request.getParameter("dipartimento"));
 		model.setNome(user.getNome());

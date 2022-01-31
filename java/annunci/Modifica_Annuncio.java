@@ -2,6 +2,8 @@ package annunci;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -58,13 +60,30 @@ public class Modifica_Annuncio extends HttpServlet {
 			}
 			app=bean.getPrice();
 			if(!app.equals(prezzo)) {
+				char segno=prezzo.charAt(0);
+				if(segno=='-') {
+					request.setAttribute("errore-modifica", 1);
+					RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/ErrorPages/erroreModifica.jsp");
+					dispatcher.forward(request, response);
+					return;
+				}
+				Pattern p = Pattern.compile("[0-9]{1,}[,][0-9]{2,}");
+				Matcher m = p.matcher(prezzo);
+				if(!m.matches()) {
+					request.setAttribute("errore-modifica", 2);
+					RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/ErrorPages/erroreModifica.jsp");
+					dispatcher.forward(request, response);
+					return;
+				}
+				
+				
 				model.update(id, prezzo, "prezzo");
 			}
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/impostazioni.jsp");
+		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/homepage.jsp");
 		dispatcher.forward(request, response);
 	}
 

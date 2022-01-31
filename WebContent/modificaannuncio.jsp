@@ -28,7 +28,7 @@
 			<input type="text"  name="libro" value="<%=bean.getNomeLibro() %>" required> <br>
 			<textarea name="descrizione" rows="10" cols="50"><%=bean.getDescrizione() %></textarea> <br>
 			<input type="text" value="<%=bean.getPrice()%>" name="prezzo" required> <br>
-			<input type="submit" value="Modifica">
+			<input type="submit" id="bottonemodifica" value="Modifica">
 
 		</form>
 	</fieldset>

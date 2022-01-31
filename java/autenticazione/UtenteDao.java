@@ -53,6 +53,7 @@ public class UtenteDao implements DAOModel {
 		PreparedStatement preparedStatement = null;
 
 		Utente bean = new Utente();
+		
 
 		String selectSQL = "SELECT * FROM " + TABLE_NAME + " WHERE MATRICOLA = ?";
 

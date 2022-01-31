@@ -1,4 +1,4 @@
-package annunci;
+package interazione_annunci;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -12,17 +12,20 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import annunci.Annuncio;
+import annunci.AnnuncioDAO;
+
 /**
- * Servlet implementation class Catalogo_Servlet
+ * Servlet implementation class Catalogo_Homepage
  */
-@WebServlet("/Catalogo_Servlet")
-public class Catalogo_Servlet extends HttpServlet {
+@WebServlet("/Catalogo_Homepage")
+public class Catalogo_Homepage extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Catalogo_Servlet() {
+    public Catalogo_Homepage() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,25 +34,19 @@ public class Catalogo_Servlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/homepage.jsp");
 		AnnuncioDAO model = new AnnuncioDAO();
 		Collection<Annuncio> catalog;
+		ServletContext ctx = this.getServletContext();
+		ctx.setAttribute("cambio", 0);
 		try {
-			catalog = (Collection<Annuncio>) model.doRetrieveAll("idannuncio");
-			if(catalog.isEmpty()) {
-				RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/ErrorPages/catalogoVuoto.jsp");
-				dispatcher.forward(request, response);
-			}
-			
-			ServletContext ctx = this.getServletContext();
+			catalog = (Collection<Annuncio>) model.doRetrieveAll("idannuncio");		
 			ctx.setAttribute("catalogo", catalog);
 				
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-
-		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/catalogo.jsp");
 		dispatcher.forward(request, response);
 	}
 
@@ -59,7 +56,6 @@ public class Catalogo_Servlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
-		
 	}
 
 }

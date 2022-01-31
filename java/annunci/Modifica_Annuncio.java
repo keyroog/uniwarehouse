@@ -1,4 +1,4 @@
-package interazioneannunci;
+package annunci;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -9,9 +9,6 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import annunci.Annuncio;
-import annunci.AnnuncioDAO;
 
 /**
  * Servlet implementation class Modifica_Annuncio

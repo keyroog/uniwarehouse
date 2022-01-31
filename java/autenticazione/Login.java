@@ -22,7 +22,7 @@ public class Login extends HttpServlet {
 			ServletContext ct = getServletContext();
 			
 			ct.setAttribute("cambio", 1);
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/ErrorPages/accessonegato.jsp");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/login.jsp");
 			String username = request.getParameter("email");
 			String password = request.getParameter("password");
 			try {
@@ -30,7 +30,7 @@ public class Login extends HttpServlet {
 				session_user= checkLogin(username, password);
 				HttpSession ctx = request.getSession();
 				ctx.setAttribute("user", session_user);
-				 dispatcher = getServletContext().getRequestDispatcher("/homepage.jsp");
+				dispatcher = getServletContext().getRequestDispatcher("/homepage.jsp");
 				if(checkAdmin(username,password)) {
 					request.getSession().setAttribute("adminRoles", true);
 				}else {

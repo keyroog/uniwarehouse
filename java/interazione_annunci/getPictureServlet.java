@@ -1,5 +1,5 @@
 
-package annunci;
+package interazione_annunci;
 
 
 import java.io.IOException;
@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import interazioneannunci.PostDAO;
+import annunci.PostDAO;
 
 @WebServlet("/getPicture")
 public class getPictureServlet extends HttpServlet {

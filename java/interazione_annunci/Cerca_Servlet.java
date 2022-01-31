@@ -1,28 +1,32 @@
-package annunci;
+package interazione_annunci;
 
+import java.util.ArrayList;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Collection;
 
 import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+
+import annunci.Annuncio;
+import annunci.AnnuncioDAO;
 
 /**
- * Servlet implementation class Catalogo_Homepage
+ * Servlet implementation class Cerca_Servlet
  */
-@WebServlet("/Catalogo_Homepage")
-public class Catalogo_Homepage extends HttpServlet {
+@WebServlet("/Cerca_Servlet")
+public class Cerca_Servlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Catalogo_Homepage() {
+    public Cerca_Servlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,19 +35,26 @@ public class Catalogo_Homepage extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/homepage.jsp");
+		String ricerca = request.getParameter("search");
+		
 		AnnuncioDAO model = new AnnuncioDAO();
-		Collection<Annuncio> catalog;
-		ServletContext ctx = this.getServletContext();
-		ctx.setAttribute("cambio", 0);
+		Collection<Annuncio> risultato=new ArrayList<Annuncio>();
 		try {
-			catalog = (Collection<Annuncio>) model.doRetrieveAll("idannuncio");		
-			ctx.setAttribute("catalogo", catalog);
-				
+			Collection<Annuncio> annunci = model.doRetrieveAll("idannuncio");
+			if(!annunci.isEmpty()) {
+				for(Annuncio x : annunci) {
+					String nomelibro=x.getNomeLibro();
+					if(nomelibro.contains(ricerca)||ricerca.contains(nomelibro)) {
+						risultato.add(x);
+					}
+				}
+			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		HttpSession ssn = request.getSession();
+		ssn.setAttribute("risultato", risultato);
+		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/homepage.jsp");
 		dispatcher.forward(request, response);
 	}
 

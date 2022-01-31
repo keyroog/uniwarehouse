@@ -69,7 +69,8 @@ public class Modifica_Password extends HttpServlet {
 			 dispatcher.forward(request, response);
 		} catch (Exception e) {
 			request.getSession().setAttribute("adminRoles", false);
-			request.setAttribute("errore-registrazione", 8);
+			request.setAttribute("errore-registrazione", 9);
+			dispatcher = getServletContext().getRequestDispatcher("/ErrorPages/accessonegato.jsp");
 			dispatcher.forward(request, response);
 		}
 	}

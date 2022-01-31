@@ -1,14 +1,18 @@
 <%@ page isErrorPage="true" %>  
 <head>
+<title>Errore Registrazione - UniWarehouse</title>
 <link href="./css/accessonegato.css" rel="stylesheet" type="text/css">
 </head>
 <body>
 <%@include file="../header.jsp" %>
 <div class="accessdenied">
 <fieldset>
-<legend>Errore di registrazione</legend>
+<legend>Errore</legend>
 
 <%int errore = (int)request.getAttribute("errore-registrazione");%>
+<%	if(errore==0){ %>
+	<h1>Matricola Già Registrata </h1>
+<%	} %>
 <%	if(errore==1){ %>
 	<h1>Il nome non puo contenere numeri o caratteri speciali </h1>
 <%	} %>
@@ -42,6 +46,11 @@
 <%	if(errore==8){ %>
 	<h1>Email o Password Errata </h1>
 	<a href="./login.jsp" class="button">RIPROVA</a>
+<%	} %>
+
+<%	if(errore==9){ %>
+	<h1>Email o Password Errata </h1>
+	<a href="./modificapassword.jsp" class="button">RIPROVA</a>
 <%	} %>
 
 </fieldset>

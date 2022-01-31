@@ -1,4 +1,4 @@
-package annunci;
+package interazione_annunci;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -12,17 +12,21 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import autenticazione.Utente;
+import annunci.AnnuncioDAO;
+import annunci.Annuncio;
+
 /**
- * Servlet implementation class Filtro_Servlet
+ * Servlet implementation class Annunci_Utente
  */
-@WebServlet("/Filtro_Servlet")
-public class Filtro_Servlet extends HttpServlet {
+@WebServlet("/Annunci_Utente")
+public class Annunci_Utente extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Filtro_Servlet() {
+    public Annunci_Utente() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -31,29 +35,31 @@ public class Filtro_Servlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String action = request.getParameter("action");
-		HttpSession ssn  = request.getSession();
+		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/ErrorPages/nessunAnnuncio.jsp");
 		AnnuncioDAO model = new AnnuncioDAO();
-		Collection<Annuncio>catalog;
+		Collection<Annuncio> catalog;
+		HttpSession ssn = request.getSession();
+		Utente usr = (Utente) ssn.getAttribute("user");
+		int matricola = usr.getMatricola();
 		try {
-			if(action.equals("tutti")) {
-				catalog = (Collection<Annuncio>) model.doRetrieveAll("idannuncio");
-			}else {
-				catalog = (Collection<Annuncio>) model.doRetrieveByDipartimento(action);
-			}
+			catalog = (Collection<Annuncio>) model.doRetrieveByKey(matricola);
 			if(catalog.isEmpty()) {
-				ssn.setAttribute("filtrovuoto","1");
+				dispatcher.forward(request, response);
+				return;
 			}
-			ssn.setAttribute("catalogo",catalog);
+			
+			
+			request.setAttribute("catalogo", catalog);
+				
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			
 		}
-		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/catalogo.jsp");
+		
+
+		dispatcher = this.getServletContext().getRequestDispatcher("/annunci_utente.jsp");
 		dispatcher.forward(request, response);
 	}
-
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)

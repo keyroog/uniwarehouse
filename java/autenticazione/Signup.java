@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class ProductControl
+ * Servlet implementation class WishlistServlet
  */
 
 @WebServlet("/Signup")
@@ -77,8 +77,14 @@ public class Signup extends HttpServlet {
 		}
 		
 		String matricola = request.getParameter("matricola");
+		//UtenteDao check = new UtenteDao();
 		try {
 			int mat = Validator.checkMatricola(matricola);
+/*			if(check.doRetrieveByKey(mat)!=null) {
+				error = 0;
+				request.setAttribute("errore-registrazione", error);
+				dispatcher.forward(request, response);
+			}*/
 			model.setMatricola(mat);
 		}catch(Exception e) {
 			error = 6;
@@ -104,6 +110,9 @@ public class Signup extends HttpServlet {
 		try {
 			dao.doSave(model);
 		} catch (SQLException e) {
+				error = 0;
+				request.setAttribute("errore-registrazione", error);
+				dispatcher.forward(request, response);
 			System.out.println("Error:" + e.getMessage());
 		}
 

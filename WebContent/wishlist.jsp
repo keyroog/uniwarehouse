@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1" import="interazioneannunci.Wishlist,annunci.Annuncio,java.util.Collection,java.util.List"%>
+    pageEncoding="ISO-8859-1" import="interazione_annunci.Wishlist,annunci.Annuncio,java.util.Collection,java.util.List"%>
     
      <%
 

@@ -1,5 +1,6 @@
 <%@ page isErrorPage="true" %>  
 <head>
+<title>Errore Reimpostazione - UniWarehouse</title>
 <link href="./css/accessonegato.css" rel="stylesheet" type="text/css">
 </head>
 <body>

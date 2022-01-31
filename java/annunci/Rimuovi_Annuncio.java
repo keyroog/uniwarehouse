@@ -1,4 +1,4 @@
-package interazioneannunci;
+package annunci;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -15,8 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import annunci.Annuncio;
-import annunci.AnnuncioDAO;
+import interazione_annunci.Wishlist;
 
 /**
  * Servlet implementation class Rimuovi_Annuncio

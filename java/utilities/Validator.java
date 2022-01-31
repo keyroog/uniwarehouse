@@ -15,7 +15,7 @@ public class Validator {
 	}
 	
 	public static String checkEmail(String email) throws Exception{
-		Pattern p = Pattern.compile("^(.+)@(.+)$");
+		Pattern p = Pattern.compile("^[A-Z0-9._%+-]+@[A-Z0-9.-]+\\.[A-Z]{2,6}$", Pattern.CASE_INSENSITIVE);
 		Matcher m = p.matcher(email);
 		if(!m.matches()) {
 			throw new Exception("Invalid Email");

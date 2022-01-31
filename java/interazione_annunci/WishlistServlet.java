@@ -1,4 +1,4 @@
-package interazioneannunci;
+package interazione_annunci;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -14,8 +14,8 @@ import javax.servlet.http.HttpServletResponse;
 import annunci.Annuncio;
 import annunci.AnnuncioDAO;
 
-@WebServlet("/ProductControl")
-public class ProductControl extends HttpServlet {
+@WebServlet("/WishlistServlet")
+public class WishlistServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)

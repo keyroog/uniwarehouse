@@ -1,29 +1,31 @@
-package annunci;
+package interazione_annunci;
 
-import java.util.ArrayList;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.Collection;
 
 import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
+
+import annunci.Annuncio;
+import annunci.AnnuncioDAO;
 
 /**
- * Servlet implementation class Cerca_Servlet
+ * Servlet implementation class Catalogo_Servlet
  */
-@WebServlet("/Cerca_Servlet")
-public class Cerca_Servlet extends HttpServlet {
+@WebServlet("/Catalogo_Servlet")
+public class Catalogo_Servlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Cerca_Servlet() {
+    public Catalogo_Servlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -32,26 +34,25 @@ public class Cerca_Servlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String ricerca = request.getParameter("search");
-		
 		AnnuncioDAO model = new AnnuncioDAO();
-		Collection<Annuncio> risultato=new ArrayList<Annuncio>();
+		Collection<Annuncio> catalog;
 		try {
-			Collection<Annuncio> annunci = model.doRetrieveAll("idannuncio");
-			if(!annunci.isEmpty()) {
-				for(Annuncio x : annunci) {
-					String nomelibro=x.getNomeLibro();
-					if(nomelibro.contains(ricerca)||ricerca.contains(nomelibro)) {
-						risultato.add(x);
-					}
-				}
+			catalog = (Collection<Annuncio>) model.doRetrieveAll("idannuncio");
+			if(catalog.isEmpty()) {
+				RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/ErrorPages/catalogoVuoto.jsp");
+				dispatcher.forward(request, response);
 			}
+			
+			ServletContext ctx = this.getServletContext();
+			ctx.setAttribute("catalogo", catalog);
+				
 		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		HttpSession ssn = request.getSession();
-		ssn.setAttribute("risultato", risultato);
-		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/homepage.jsp");
+		
+
+		RequestDispatcher dispatcher = this.getServletContext().getRequestDispatcher("/catalogo.jsp");
 		dispatcher.forward(request, response);
 	}
 
@@ -61,6 +62,7 @@ public class Cerca_Servlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+		
 	}
 
 }

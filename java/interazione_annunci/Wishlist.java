@@ -1,4 +1,4 @@
-package interazioneannunci;
+package interazione_annunci;
 
 import java.util.ArrayList;
 import java.util.List;

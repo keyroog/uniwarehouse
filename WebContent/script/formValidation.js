@@ -1,13 +1,13 @@
-
 function validateForm() {
 	var nome = document.forms["registra"]["nome"].value;
 	var cognome = document.forms["registra"]["cognome"].value;
 	var email = document.forms["registra"]["email"].value;
 	var password = document.forms["registra"]["password"].value;
+	var conferma_password = document.forms["registra"]["conferma_password"].value;
 	var matricola = document.forms["registra"]["matricola"].value;
 	var cellulare = document.forms["registra"]["cellulare"].value;
 	
-	if (nome == "") {
+	if (nome =="") {
     	alert("Compila il campo Nome");
 		document.registra.nome.focus();
     	return false;
@@ -29,6 +29,13 @@ function validateForm() {
 		document.registra.password.focus();
 		return false;
 	}
+	
+	
+	if (conferma_password =="") {
+    	alert("Compila il campo Ripeti Password");
+		document.registra.conferma_password.focus();
+    	return false;
+  	}
 	
 	if (matricola ==""){
 		alert("Compila il campo Matricola");

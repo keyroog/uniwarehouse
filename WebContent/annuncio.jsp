@@ -24,7 +24,7 @@
 	    					<option value="economia">Economia</option>
 	    					<option value="chimica">Chimica</option>
 	  		</select><br><br>
-			<input type="submit" class="bottonesubmit"value="Pubblica">
+			<input type="submit" id="bottoneinserisci" class="bottonesubmit"value="Pubblica">
 		</form>
 	</fieldset>
 	</div>

@@ -26,7 +26,7 @@
 			</div>
 			<input type="hidden" name="id" value="<%=bean.getId()%>">
 			<input type="text"  name="libro" value="<%=bean.getNomeLibro() %>" required> <br>
-			<textarea name="descrizione" rows="10" cols="50"><%=bean.getDescrizione() %></textarea> <br>
+			<textarea name="descrizione" rows="10" cols="50" required><%=bean.getDescrizione() %></textarea> <br>
 			<input type="text" value="<%=bean.getPrice()%>" name="prezzo" required> <br>
 			<input type="submit" id="bottonemodifica" value="Modifica">
 
